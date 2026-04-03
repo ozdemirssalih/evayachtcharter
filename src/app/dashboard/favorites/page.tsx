@@ -111,14 +111,14 @@ export default function FavoritesPage() {
       <div className="px-4 py-4">
         {favorites.length === 0 ? (
           <div className="text-center py-20">
-            <Heart className="w-16 h-16 text-gray-700 mx-auto mb-4" />
+            <Heart className="w-16 h-16 text-gray-300 mx-auto mb-4" />
             <h3 className="text-xl font-bold mb-2">No saved yachts yet</h3>
             <p className="text-sm text-gray-600 mb-6">
               Browse our fleet and save your favorite yachts for later
             </p>
             <Link
               href="/yachts"
-              className="bg-teal-600 hover:bg-teal-700 px-6 py-2.5 rounded-full text-sm font-semibold transition inline-flex items-center gap-2"
+              className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-2.5 rounded-full text-sm font-semibold transition inline-flex items-center gap-2"
             >
               <Search className="w-4 h-4" /> Browse Yachts
             </Link>
@@ -175,7 +175,7 @@ export default function FavoritesPage() {
                       </div>
                       <Link
                         href={`/yachts/${yacht.id}`}
-                        className="bg-teal-600 hover:bg-teal-700 px-3 py-1.5 rounded-full text-xs font-semibold transition flex items-center gap-1"
+                        className="bg-teal-600 hover:bg-teal-700 text-white px-3 py-1.5 rounded-full text-xs font-semibold transition flex items-center gap-1"
                       >
                         View <ArrowRight className="w-3 h-3" />
                       </Link>

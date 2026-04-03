@@ -22,7 +22,7 @@ export default function DashboardPage() {
         </div>
         <div className="flex items-center gap-3">
           <button className="relative"><Bell className="w-5 h-5 text-gray-600" /><div className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full" /></button>
-          <div className="w-8 h-8 rounded-full bg-teal-600 flex items-center justify-center text-xs font-bold">E</div>
+          <div className="w-8 h-8 rounded-full bg-teal-600 text-white flex items-center justify-center text-xs font-bold">E</div>
         </div>
       </div>
 
@@ -56,7 +56,7 @@ export default function DashboardPage() {
                   <div key={b.id} className="glass rounded-xl p-4">
                     <div className="flex items-center justify-between mb-2">
                       <h3 className="font-semibold">{b.yacht}</h3>
-                      <span className={`text-xs px-2 py-1 rounded-full ${b.status === 'confirmed' ? 'bg-green-600/20 text-green-400' : 'bg-yellow-600/20 text-yellow-400'}`}>
+                      <span className={`text-xs px-2 py-1 rounded-full ${b.status === 'confirmed' ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'}`}>
                         {b.status}
                       </span>
                     </div>
@@ -97,7 +97,7 @@ export default function DashboardPage() {
                   <span className="text-sm font-semibold">Early Bird Discount</span>
                 </div>
                 <p className="text-xs text-gray-600 mb-3">Book 30 days in advance and get 15% off on any yacht charter.</p>
-                <button className="bg-teal-600 hover:bg-teal-700 px-4 py-2 rounded-full text-xs font-semibold transition">Book Now</button>
+                <button className="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-full text-xs font-semibold transition">Book Now</button>
               </div>
             </div>
           </>

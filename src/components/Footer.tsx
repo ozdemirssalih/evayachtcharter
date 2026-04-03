@@ -57,7 +57,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="border-t border-teal-200 bg-[#080e1a]">
+    <footer className="border-t border-teal-200 bg-gray-50">
       {/* Newsletter Section */}
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="glass rounded-3xl p-8 md:p-10 mb-12 bg-gradient-to-r from-teal-600/10 to-purple-600/10 relative overflow-hidden">
@@ -83,13 +83,13 @@ export default function Footer() {
               </div>
               <button
                 type="submit"
-                className="bg-teal-600 hover:bg-teal-700 px-6 py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition hover:shadow-lg hover:shadow-teal-600/25 whitespace-nowrap"
+                className="bg-teal-600 hover:bg-teal-700 px-6 py-3 rounded-xl font-semibold text-white text-sm flex items-center justify-center gap-2 transition hover:shadow-lg hover:shadow-teal-600/25 whitespace-nowrap"
               >
                 <Send className="w-4 h-4" /> Subscribe
               </button>
             </form>
             {subscribed && (
-              <div className="flex items-center justify-center gap-2 mt-4 text-green-400 text-sm animate-pulse">
+              <div className="flex items-center justify-center gap-2 mt-4 text-green-600 text-sm animate-pulse">
                 <CheckCircle className="w-4 h-4" />
                 Thank you for subscribing!
               </div>
@@ -189,7 +189,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="text-center mt-8 pt-6 border-t border-white/5">
+        <div className="text-center mt-8 pt-6 border-t border-teal-200">
           <p className="text-xs text-gray-600">
             &copy; 2026 Eva Yacht Charter. All rights reserved. Bodrum, Turkey.
           </p>

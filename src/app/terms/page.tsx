@@ -155,7 +155,7 @@ export default function TermsPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 px-6 py-2.5 rounded-xl text-sm font-semibold transition"
+              className="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white px-6 py-2.5 rounded-xl text-sm font-semibold transition"
             >
               Contact Us <ChevronRight className="w-4 h-4" />
             </Link>

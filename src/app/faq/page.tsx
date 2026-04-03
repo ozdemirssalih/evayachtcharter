@@ -204,7 +204,7 @@ export default function FAQPage() {
                 onClick={() => setActiveCategory(cat.title)}
                 className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-xs font-medium whitespace-nowrap transition ${
                   activeCategory === cat.title
-                    ? 'bg-teal-600 text-gray-800'
+                    ? 'bg-teal-600 text-white'
                     : 'glass text-gray-600 hover:text-gray-800 hover:bg-teal-50'
                 }`}
               >
@@ -243,7 +243,7 @@ export default function FAQPage() {
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
                 href="/contact"
-                className="bg-teal-600 hover:bg-teal-700 px-6 py-3 rounded-xl font-semibold text-sm transition flex items-center justify-center gap-2"
+                className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-xl font-semibold text-sm transition flex items-center justify-center gap-2"
               >
                 <MessageCircle className="w-4 h-4" /> Contact Us
               </Link>

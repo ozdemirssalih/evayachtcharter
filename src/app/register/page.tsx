@@ -61,7 +61,7 @@ export default function RegisterPage() {
                   <Phone className="w-4 h-4 text-gray-600" />
                 </div>
               </div>
-              <button onClick={handleRegister} disabled={loading} className="w-full bg-teal-600 hover:bg-teal-700 py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition disabled:opacity-50">
+              <button onClick={handleRegister} disabled={loading} className="w-full bg-teal-600 hover:bg-teal-700 text-white py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition disabled:opacity-50">
                 {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <><ArrowRight className="w-4 h-4" /> Continue</>}
               </button>
             </div>
@@ -72,7 +72,7 @@ export default function RegisterPage() {
                 <p className="text-xs text-gray-600 mb-2">Sent to +90 {form.phone}</p>
                 <input type="text" placeholder="000000" maxLength={6} value={otp} onChange={e => setOtp(e.target.value.replace(/\D/g, '').slice(0, 6))} className="w-full bg-gray-50 border border-teal-200 rounded-xl px-4 py-3 text-center text-2xl tracking-[0.5em] font-mono outline-none focus:border-teal-500 transition" />
               </div>
-              <button onClick={handleVerify} disabled={loading} className="w-full bg-teal-600 hover:bg-teal-700 py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition disabled:opacity-50">
+              <button onClick={handleVerify} disabled={loading} className="w-full bg-teal-600 hover:bg-teal-700 text-white py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition disabled:opacity-50">
                 {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : 'Verify & Create Account'}
               </button>
               <button onClick={() => setStep('info')} className="w-full text-xs text-gray-600 hover:text-gray-600 transition">Back</button>

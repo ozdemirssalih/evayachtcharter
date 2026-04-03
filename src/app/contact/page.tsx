@@ -211,7 +211,7 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full bg-teal-600 hover:bg-teal-700 py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition disabled:opacity-50"
+                    className="w-full bg-teal-600 hover:bg-teal-700 text-white py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition disabled:opacity-50"
                   >
                     {loading ? (
                       <Loader2 className="w-4 h-4 animate-spin" />
@@ -234,7 +234,7 @@ export default function ContactPage() {
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3191.5!2d27.4305!3d37.0344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDAyJzA0LjAiTiAyN8KwMjUnNDkuOCJF!5e0!3m2!1sen!2str!4v1680000000000!5m2!1sen!2str"
                   width="100%"
                   height="100%"
-                  style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) saturate(0.3) brightness(0.6)' }}
+                  style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
@@ -261,7 +261,7 @@ export default function ContactPage() {
                 <div className="mt-4 pt-4 border-t border-teal-200">
                   <div className="flex items-center gap-2 text-sm">
                     <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                    <span className="text-green-400 font-medium">24/7 Emergency Line Available</span>
+                    <span className="text-green-600 font-medium">24/7 Emergency Line Available</span>
                   </div>
                 </div>
               </div>
@@ -333,7 +333,7 @@ export default function ContactPage() {
               href="https://wa.me/905321234567"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 px-8 py-3 rounded-xl font-semibold text-sm transition"
+              className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-xl font-semibold text-sm transition"
             >
               <MessageCircle className="w-5 h-5" /> Chat on WhatsApp
             </a>
@@ -348,9 +348,9 @@ export default function ContactPage() {
             <div className="bg-teal-600 px-4 py-3 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                <span className="text-sm font-semibold">Live Chat</span>
+                <span className="text-sm font-semibold text-white">Live Chat</span>
               </div>
-              <button onClick={() => setShowChat(false)} className="text-gray-800/70 hover:text-gray-800 text-lg leading-none">
+              <button onClick={() => setShowChat(false)} className="text-white/70 hover:text-white text-lg leading-none">
                 &times;
               </button>
             </div>
@@ -367,7 +367,7 @@ export default function ContactPage() {
                   placeholder="Type a message..."
                   className="flex-1 bg-gray-50 border border-teal-200 rounded-xl px-3 py-2 text-sm outline-none focus:border-teal-500 transition"
                 />
-                <button className="bg-teal-600 hover:bg-teal-700 p-2 rounded-xl transition">
+                <button className="bg-teal-600 hover:bg-teal-700 text-white p-2 rounded-xl transition">
                   <Send className="w-4 h-4" />
                 </button>
               </div>

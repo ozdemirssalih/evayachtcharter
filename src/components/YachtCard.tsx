@@ -96,7 +96,7 @@ export default function YachtCard({
 
         {/* Featured badge */}
         {featured && (
-          <div className="absolute bottom-3 left-3 bg-gradient-to-r from-amber-600 to-yellow-500 px-2.5 py-1 rounded-full text-xs font-semibold">
+          <div className="absolute bottom-3 left-3 bg-gradient-to-r from-teal-600 to-teal-500 text-white px-2.5 py-1 rounded-full text-xs font-semibold">
             Featured
           </div>
         )}
@@ -109,7 +109,7 @@ export default function YachtCard({
         >
           <Link
             href={`/booking?yacht=${id}`}
-            className="w-full bg-teal-600 hover:bg-teal-700 py-2.5 rounded-xl text-xs font-semibold transition flex items-center justify-center gap-2"
+            className="w-full bg-teal-600 hover:bg-teal-700 text-white py-2.5 rounded-xl text-xs font-semibold transition flex items-center justify-center gap-2"
             onClick={e => e.stopPropagation()}
           >
             <Calendar className="w-3.5 h-3.5" /> Quick Book
@@ -146,14 +146,14 @@ export default function YachtCard({
           </span>
         </div>
 
-        <div className="flex items-center justify-between pt-3 border-t border-white/5">
+        <div className="flex items-center justify-between pt-3 border-t border-gray-100">
           <div>
             <span className="text-xl font-bold text-teal-500">
               &euro;{price.toLocaleString()}
             </span>
             <span className="text-xs text-gray-600"> / day</span>
           </div>
-          <span className="bg-teal-600 hover:bg-teal-700 px-4 py-2 rounded-full text-xs font-semibold transition">
+          <span className="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-full text-xs font-semibold transition">
             View Details
           </span>
         </div>

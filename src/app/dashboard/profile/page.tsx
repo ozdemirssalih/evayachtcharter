@@ -73,10 +73,10 @@ export default function ProfilePage() {
       <div className="px-4 py-6">
         <div className="text-center mb-6">
           <div className="relative inline-block">
-            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-teal-600 to-teal-500 flex items-center justify-center text-3xl font-bold mx-auto">
+            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-teal-600 to-teal-500 text-white flex items-center justify-center text-3xl font-bold mx-auto">
               {profile.name.charAt(0)}
             </div>
-            <button className="absolute bottom-0 right-0 w-8 h-8 rounded-full bg-teal-600 flex items-center justify-center border-2 border-[#0c1222]">
+            <button className="absolute bottom-0 right-0 w-8 h-8 rounded-full bg-teal-600 text-white flex items-center justify-center border-2 border-white">
               <Camera className="w-4 h-4" />
             </button>
           </div>
@@ -87,12 +87,12 @@ export default function ProfilePage() {
               <p className="text-lg font-bold text-teal-500">6</p>
               <p className="text-[10px] text-gray-600">Trips</p>
             </div>
-            <div className="w-px h-8 bg-teal-50" />
+            <div className="w-px h-8 bg-teal-200" />
             <div className="text-center">
               <p className="text-lg font-bold text-red-400">5</p>
               <p className="text-[10px] text-gray-600">Saved</p>
             </div>
-            <div className="w-px h-8 bg-teal-50" />
+            <div className="w-px h-8 bg-teal-200" />
             <div className="text-center">
               <p className="text-lg font-bold text-yellow-400">1,200</p>
               <p className="text-[10px] text-gray-600">Points</p>
@@ -113,7 +113,7 @@ export default function ProfilePage() {
               onClick={() => { setActiveSection(tab.id as typeof activeSection); setIsEditing(false) }}
               className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-medium whitespace-nowrap transition ${
                 activeSection === tab.id
-                  ? 'bg-teal-600 text-gray-800'
+                  ? 'bg-teal-600 text-white'
                   : 'glass text-gray-600 hover:text-gray-800'
               }`}
             >
@@ -223,7 +223,7 @@ export default function ProfilePage() {
                 <div className="flex gap-3 mt-4 pt-4 border-t border-teal-200">
                   <button
                     onClick={handleSaveProfile}
-                    className="flex-1 bg-teal-600 hover:bg-teal-700 py-2.5 rounded-xl text-sm font-semibold transition flex items-center justify-center gap-2"
+                    className="flex-1 bg-teal-600 hover:bg-teal-700 text-white py-2.5 rounded-xl text-sm font-semibold transition flex items-center justify-center gap-2"
                   >
                     <Save className="w-4 h-4" /> Save Changes
                   </button>
@@ -497,7 +497,7 @@ export default function ProfilePage() {
                     </div>
                     <div className="text-left">
                       <p className="text-sm font-semibold">Two-Factor Authentication</p>
-                      <p className="text-xs text-green-400">Enabled via SMS</p>
+                      <p className="text-xs text-green-600">Enabled via SMS</p>
                     </div>
                   </div>
                   <ChevronRight className="w-4 h-4 text-gray-600" />
@@ -522,7 +522,7 @@ export default function ProfilePage() {
               <div className="space-y-3">
                 <div className="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-teal-600 to-teal-500 flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-teal-600 to-teal-500 text-white flex items-center justify-center">
                       <CreditCard className="w-5 h-5" />
                     </div>
                     <div>
@@ -530,7 +530,7 @@ export default function ProfilePage() {
                       <p className="text-xs text-gray-600">Expires 12/28</p>
                     </div>
                   </div>
-                  <span className="text-xs text-green-400">Default</span>
+                  <span className="text-xs text-green-600">Default</span>
                 </div>
                 <button className="w-full glass py-3 rounded-xl text-sm text-teal-500 hover:bg-gray-50 transition flex items-center justify-center gap-2">
                   <CreditCard className="w-4 h-4" /> Add Payment Method

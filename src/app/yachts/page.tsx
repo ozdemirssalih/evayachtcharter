@@ -97,7 +97,7 @@ export default function YachtsPage() {
             <Link href="/yachts" className="text-gray-800 font-semibold">Yachts</Link>
             <Link href="/destinations" className="text-gray-600 hover:text-gray-800 transition">Destinations</Link>
             <Link href="/about" className="text-gray-600 hover:text-gray-800 transition">About</Link>
-            <Link href="/dashboard" className="bg-teal-600 hover:bg-teal-700 px-4 py-2 rounded-full text-gray-800 text-sm font-semibold transition">Dashboard</Link>
+            <Link href="/dashboard" className="bg-teal-600 hover:bg-teal-700 px-4 py-2 rounded-full text-white text-sm font-semibold transition">Dashboard</Link>
           </nav>
         </div>
       </header>
@@ -142,7 +142,7 @@ export default function YachtsPage() {
                   <SlidersHorizontal className="w-4 h-4 text-teal-500" />
                   <span>Filters</span>
                   {activeFilterCount > 0 && (
-                    <span className="bg-teal-600 text-gray-800 text-xs w-5 h-5 rounded-full flex items-center justify-center">
+                    <span className="bg-teal-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
                       {activeFilterCount}
                     </span>
                   )}
@@ -254,7 +254,7 @@ export default function YachtsPage() {
                   </button>
                   <button
                     onClick={() => setShowFilters(false)}
-                    className="bg-teal-600 hover:bg-teal-700 px-4 py-2 rounded-xl text-xs font-semibold transition"
+                    className="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-xl text-xs font-semibold transition"
                   >
                     Apply Filters
                   </button>
@@ -293,7 +293,7 @@ export default function YachtsPage() {
                   onClick={() => setSelectedType(type)}
                   className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium whitespace-nowrap transition ${
                     selectedType === type
-                      ? 'bg-teal-600 text-gray-800'
+                      ? 'bg-teal-600 text-white'
                       : 'glass text-gray-600 hover:text-gray-800 hover:bg-teal-50'
                   }`}
                 >
@@ -307,7 +307,7 @@ export default function YachtsPage() {
           {/* Results */}
           {filteredYachts.length === 0 ? (
             <div className="text-center py-20">
-              <Search className="w-16 h-16 text-gray-700 mx-auto mb-4" />
+              <Search className="w-16 h-16 text-gray-300 mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2">No yachts found</h3>
               <p className="text-gray-600 text-sm mb-6">Try adjusting your filters or search query</p>
               <button
@@ -318,7 +318,7 @@ export default function YachtsPage() {
                   setSelectedGuests('Any')
                   setPriceRange([0, 15000])
                 }}
-                className="bg-teal-600 hover:bg-teal-700 px-6 py-2.5 rounded-full text-sm font-semibold transition"
+                className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-2.5 rounded-full text-sm font-semibold transition"
               >
                 Clear All Filters
               </button>
@@ -347,7 +347,7 @@ export default function YachtsPage() {
                         <Heart className={`w-4 h-4 ${favorites.includes(yacht.id) ? 'text-red-400 fill-red-400' : ''}`} />
                       </button>
                       {yacht.featured && (
-                        <div className="absolute bottom-3 left-3 bg-gradient-to-r from-amber-600 to-yellow-500 px-2.5 py-1 rounded-full text-xs font-semibold">
+                        <div className="absolute bottom-3 left-3 bg-gradient-to-r from-teal-600 to-teal-500 text-white px-2.5 py-1 rounded-full text-xs font-semibold">
                           Featured
                         </div>
                       )}
@@ -373,7 +373,7 @@ export default function YachtsPage() {
                           <span className="text-xl font-bold text-teal-500">&euro;{yacht.price.toLocaleString()}</span>
                           <span className="text-xs text-gray-600"> / day</span>
                         </div>
-                        <span className="bg-teal-600 hover:bg-teal-700 px-4 py-2 rounded-full text-xs font-semibold transition">
+                        <span className="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-full text-xs font-semibold transition">
                           View Details
                         </span>
                       </div>
@@ -402,7 +402,7 @@ export default function YachtsPage() {
                         <Heart className={`w-4 h-4 ${favorites.includes(yacht.id) ? 'text-red-400 fill-red-400' : ''}`} />
                       </button>
                       {yacht.featured && (
-                        <div className="absolute bottom-3 left-3 bg-gradient-to-r from-amber-600 to-yellow-500 px-2.5 py-1 rounded-full text-xs font-semibold">
+                        <div className="absolute bottom-3 left-3 bg-gradient-to-r from-teal-600 to-teal-500 text-white px-2.5 py-1 rounded-full text-xs font-semibold">
                           Featured
                         </div>
                       )}
@@ -434,7 +434,7 @@ export default function YachtsPage() {
                           <span className="text-2xl font-bold text-teal-500">&euro;{yacht.price.toLocaleString()}</span>
                           <span className="text-sm text-gray-600"> / day</span>
                         </div>
-                        <span className="bg-teal-600 hover:bg-teal-700 px-6 py-2.5 rounded-full text-sm font-semibold transition">
+                        <span className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-2.5 rounded-full text-sm font-semibold transition">
                           View Details
                         </span>
                       </div>

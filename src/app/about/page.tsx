@@ -76,7 +76,7 @@ export default function AboutPage() {
             <Link href="/yachts" className="text-gray-600 hover:text-gray-800 transition">Yachts</Link>
             <Link href="/destinations" className="text-gray-600 hover:text-gray-800 transition">Destinations</Link>
             <Link href="/about" className="text-gray-800 font-semibold">About</Link>
-            <Link href="/dashboard" className="bg-teal-600 hover:bg-teal-700 px-4 py-2 rounded-full text-gray-800 text-sm font-semibold transition">Dashboard</Link>
+            <Link href="/dashboard" className="bg-teal-600 hover:bg-teal-700 px-4 py-2 rounded-full text-white text-sm font-semibold transition">Dashboard</Link>
           </nav>
         </div>
       </header>
@@ -190,7 +190,7 @@ export default function AboutPage() {
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-center mb-10">Our <span className="gold-text">Journey</span></h2>
             <div className="relative">
-              <div className="absolute left-1/2 -translate-x-1/2 w-0.5 h-full bg-teal-50 hidden md:block" />
+              <div className="absolute left-1/2 -translate-x-1/2 w-0.5 h-full bg-teal-200 hidden md:block" />
               <div className="space-y-8">
                 {timeline.map((item, idx) => (
                   <div key={item.year} className={`flex flex-col md:flex-row items-center gap-4 ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
@@ -201,7 +201,7 @@ export default function AboutPage() {
                         <p className="text-xs text-gray-600">{item.desc}</p>
                       </div>
                     </div>
-                    <div className="w-4 h-4 rounded-full bg-teal-600 border-4 border-[#0c1222] relative z-10 flex-shrink-0" />
+                    <div className="w-4 h-4 rounded-full bg-teal-600 border-4 border-white relative z-10 flex-shrink-0" />
                     <div className="flex-1 hidden md:block" />
                   </div>
                 ))}
@@ -266,7 +266,7 @@ export default function AboutPage() {
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
                 href="/yachts"
-                className="bg-teal-600 hover:bg-teal-700 px-8 py-3 rounded-full font-semibold transition flex items-center justify-center gap-2"
+                className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 rounded-full font-semibold transition flex items-center justify-center gap-2"
               >
                 <Ship className="w-4 h-4" /> Browse Our Fleet
               </Link>

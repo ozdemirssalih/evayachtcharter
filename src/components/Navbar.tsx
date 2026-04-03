@@ -28,7 +28,7 @@ export default function Navbar() {
       <div
         className={`px-4 py-3 flex items-center justify-between transition-all duration-300 ${
           scrolled
-            ? 'glass shadow-lg shadow-black/20'
+            ? 'glass shadow-md'
             : 'bg-transparent border-b border-transparent'
         }`}
       >
@@ -54,7 +54,7 @@ export default function Navbar() {
               href="/dashboard"
               className="flex items-center gap-2 glass px-3 py-2 rounded-full hover:bg-teal-50 transition"
             >
-              <div className="w-7 h-7 rounded-full bg-teal-600 flex items-center justify-center text-xs font-bold">
+              <div className="w-7 h-7 rounded-full bg-teal-600 text-white flex items-center justify-center text-xs font-bold">
                 E
               </div>
               <ChevronDown className="w-3 h-3 text-gray-600" />
@@ -62,7 +62,7 @@ export default function Navbar() {
           ) : (
             <Link
               href="/login"
-              className="bg-teal-600 hover:bg-teal-700 px-5 py-2 rounded-full text-gray-800 text-sm font-semibold transition hover:shadow-lg hover:shadow-teal-600/25"
+              className="bg-teal-600 hover:bg-teal-700 px-5 py-2 rounded-full text-white text-sm font-semibold transition hover:shadow-lg hover:shadow-teal-600/25"
             >
               Sign In
             </Link>
@@ -77,17 +77,17 @@ export default function Navbar() {
         >
           <div className="relative w-6 h-5">
             <span
-              className={`absolute left-0 w-full h-0.5 bg-white rounded transition-all duration-300 ${
+              className={`absolute left-0 w-full h-0.5 bg-gray-700 rounded transition-all duration-300 ${
                 menuOpen ? 'top-2 rotate-45' : 'top-0'
               }`}
             />
             <span
-              className={`absolute left-0 top-2 w-full h-0.5 bg-white rounded transition-all duration-300 ${
+              className={`absolute left-0 top-2 w-full h-0.5 bg-gray-700 rounded transition-all duration-300 ${
                 menuOpen ? 'opacity-0 scale-0' : 'opacity-100'
               }`}
             />
             <span
-              className={`absolute left-0 w-full h-0.5 bg-white rounded transition-all duration-300 ${
+              className={`absolute left-0 w-full h-0.5 bg-gray-700 rounded transition-all duration-300 ${
                 menuOpen ? 'top-2 -rotate-45' : 'top-4'
               }`}
             />
@@ -101,7 +101,7 @@ export default function Navbar() {
           menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="glass px-4 py-4 space-y-1 border-t border-white/5">
+        <div className="glass px-4 py-4 space-y-1 border-t border-teal-100">
           {navLinks.map(link => (
             <Link
               key={link.href}
@@ -119,7 +119,7 @@ export default function Navbar() {
                 className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 rounded-xl transition"
                 onClick={() => setMenuOpen(false)}
               >
-                <div className="w-8 h-8 rounded-full bg-teal-600 flex items-center justify-center text-xs font-bold">
+                <div className="w-8 h-8 rounded-full bg-teal-600 text-white flex items-center justify-center text-xs font-bold">
                   E
                 </div>
                 <span>Dashboard</span>
@@ -127,7 +127,7 @@ export default function Navbar() {
             ) : (
               <Link
                 href="/login"
-                className="block bg-teal-600 text-center py-3 rounded-xl font-semibold hover:bg-teal-700 transition"
+                className="block bg-teal-600 text-white text-center py-3 rounded-xl font-semibold hover:bg-teal-700 transition"
                 onClick={() => setMenuOpen(false)}
               >
                 Sign In

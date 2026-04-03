@@ -58,7 +58,7 @@ export default function LoginPage() {
               <button
                 onClick={handleSendOtp}
                 disabled={loading}
-                className="w-full bg-teal-600 hover:bg-teal-700 py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition disabled:opacity-50"
+                className="w-full bg-teal-600 hover:bg-teal-700 text-white py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition disabled:opacity-50"
               >
                 {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <><ArrowRight className="w-4 h-4" /> Send Code</>}
               </button>
@@ -80,7 +80,7 @@ export default function LoginPage() {
               <button
                 onClick={handleVerifyOtp}
                 disabled={loading}
-                className="w-full bg-teal-600 hover:bg-teal-700 py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition disabled:opacity-50"
+                className="w-full bg-teal-600 hover:bg-teal-700 text-white py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition disabled:opacity-50"
               >
                 {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : 'Verify & Sign In'}
               </button>

@@ -112,7 +112,7 @@ export default function DestinationsPage() {
             <Link href="/yachts" className="text-gray-600 hover:text-gray-800 transition">Yachts</Link>
             <Link href="/destinations" className="text-gray-800 font-semibold">Destinations</Link>
             <Link href="/about" className="text-gray-600 hover:text-gray-800 transition">About</Link>
-            <Link href="/dashboard" className="bg-teal-600 hover:bg-teal-700 px-4 py-2 rounded-full text-gray-800 text-sm font-semibold transition">Dashboard</Link>
+            <Link href="/dashboard" className="bg-teal-600 hover:bg-teal-700 px-4 py-2 rounded-full text-white text-sm font-semibold transition">Dashboard</Link>
           </nav>
         </div>
       </header>
@@ -152,9 +152,9 @@ export default function DestinationsPage() {
                 <img src={dest.thumbnail} alt={dest.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent" />
                 <div className="absolute bottom-3 left-3 right-3">
-                  <h3 className="font-bold text-lg">{dest.name}</h3>
+                  <h3 className="font-bold text-lg text-white">{dest.name}</h3>
                   <div className="flex items-center justify-between">
-                    <p className="text-xs text-gray-600">{dest.yachtCount} yachts</p>
+                    <p className="text-xs text-gray-200">{dest.yachtCount} yachts</p>
                     <div className="flex items-center gap-1">
                       <Star className="w-3 h-3 text-yellow-400 fill-yellow-400" />
                       <span className="text-xs">{dest.rating}</span>
@@ -177,11 +177,11 @@ export default function DestinationsPage() {
                 alt={selectedDestination.name}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0c1222] via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">
-                <p className="text-sm text-teal-400 mb-1">{selectedDestination.region}</p>
-                <h2 className="text-3xl md:text-4xl font-bold mb-2">{selectedDestination.name}</h2>
-                <div className="flex items-center gap-4 text-sm text-gray-600">
+                <p className="text-sm text-teal-300 mb-1">{selectedDestination.region}</p>
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">{selectedDestination.name}</h2>
+                <div className="flex items-center gap-4 text-sm text-gray-200">
                   <span className="flex items-center gap-1"><Ship className="w-4 h-4" /> {selectedDestination.yachtCount} yachts</span>
                   <span className="flex items-center gap-1"><Star className="w-4 h-4 text-yellow-400 fill-yellow-400" /> {selectedDestination.rating}</span>
                   <span className="flex items-center gap-1"><Calendar className="w-4 h-4" /> {selectedDestination.bestSeason}</span>
@@ -246,8 +246,8 @@ export default function DestinationsPage() {
                         {route.stops.map((stop, idx) => (
                           <div key={stop} className="flex items-center gap-3">
                             <div className="flex flex-col items-center">
-                              <div className={`w-3 h-3 rounded-full ${idx === 0 ? 'bg-teal-500' : idx === route.stops.length - 1 ? 'bg-green-400' : 'bg-white/30'}`} />
-                              {idx < route.stops.length - 1 && <div className="w-0.5 h-4 bg-teal-50" />}
+                              <div className={`w-3 h-3 rounded-full ${idx === 0 ? 'bg-teal-500' : idx === route.stops.length - 1 ? 'bg-green-400' : 'bg-gray-300'}`} />
+                              {idx < route.stops.length - 1 && <div className="w-0.5 h-4 bg-teal-200" />}
                             </div>
                             <span className="text-sm text-gray-600">{stop}</span>
                           </div>
@@ -268,7 +268,7 @@ export default function DestinationsPage() {
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link
                   href={`/yachts?destination=${selectedDestination.name}`}
-                  className="flex-1 bg-teal-600 hover:bg-teal-700 py-3 rounded-xl font-semibold text-sm transition text-center flex items-center justify-center gap-2"
+                  className="flex-1 bg-teal-600 hover:bg-teal-700 text-white py-3 rounded-xl font-semibold text-sm transition text-center flex items-center justify-center gap-2"
                 >
                   <Ship className="w-4 h-4" /> Browse Yachts in {selectedDestination.name}
                 </Link>

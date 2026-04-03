@@ -192,7 +192,7 @@ export default function HomePage() {
               </div>
               <Link
                 href="/yachts"
-                className="bg-teal-600 hover:bg-teal-700 rounded-xl py-3 font-semibold text-sm flex items-center justify-center gap-2 transition hover:shadow-lg hover:shadow-teal-600/25"
+                className="bg-teal-600 hover:bg-teal-700 text-white rounded-xl py-3 font-semibold text-sm flex items-center justify-center gap-2 transition hover:shadow-lg hover:shadow-teal-600/25"
               >
                 <Search className="w-4 h-4" /> Search
               </Link>
@@ -282,7 +282,7 @@ export default function HomePage() {
                       <Heart className="w-4 h-4" />
                     </button>
                     {yacht.featured && (
-                      <div className="absolute bottom-3 left-3 bg-gradient-to-r from-amber-600 to-yellow-500 px-2.5 py-1 rounded-full text-xs font-semibold">
+                      <div className="absolute bottom-3 left-3 bg-gradient-to-r from-teal-600 to-teal-500 text-white px-2.5 py-1 rounded-full text-xs font-semibold">
                         Featured
                       </div>
                     )}
@@ -315,7 +315,7 @@ export default function HomePage() {
                         </span>
                         <span className="text-xs text-gray-600"> / day</span>
                       </div>
-                      <span className="bg-teal-600 hover:bg-teal-700 px-4 py-2 rounded-full text-xs font-semibold transition">
+                      <span className="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-full text-xs font-semibold transition">
                         Book Now
                       </span>
                     </div>
@@ -348,8 +348,8 @@ export default function HomePage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent" />
                 <div className="absolute bottom-3 left-3">
-                  <h3 className="font-bold text-lg">{dest.name}</h3>
-                  <p className="text-xs text-gray-600">{dest.yachtCount} yachts</p>
+                  <h3 className="font-bold text-lg text-white">{dest.name}</h3>
+                  <p className="text-xs text-gray-200">{dest.yachtCount} yachts</p>
                 </div>
               </Link>
             ))}
@@ -376,7 +376,7 @@ export default function HomePage() {
                   <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-teal-600/20 to-teal-500/10 flex items-center justify-center mx-auto border border-teal-500/20">
                     <step.icon className="w-8 h-8 text-teal-500" />
                   </div>
-                  <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-teal-600 flex items-center justify-center text-xs font-bold">
+                  <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-teal-600 text-white flex items-center justify-center text-xs font-bold">
                     {step.step}
                   </div>
                 </div>
@@ -450,7 +450,7 @@ export default function HomePage() {
                     className={`transition-all duration-300 rounded-full ${
                       idx === testimonialIdx
                         ? 'w-8 h-2 bg-teal-500'
-                        : 'w-2 h-2 bg-white/20 hover:bg-white/40'
+                        : 'w-2 h-2 bg-gray-300 hover:bg-gray-400'
                     }`}
                   />
                 ))}
@@ -542,7 +542,7 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
                 href="/register"
-                className="bg-teal-600 hover:bg-teal-700 px-8 py-3 rounded-full font-semibold transition hover:shadow-lg hover:shadow-teal-600/25"
+                className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 rounded-full font-semibold transition hover:shadow-lg hover:shadow-teal-600/25"
               >
                 Create Account
               </Link>
@@ -619,7 +619,7 @@ export default function HomePage() {
                   rows={4}
                   className="w-full bg-gray-50 border border-teal-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-teal-500 transition resize-none"
                 />
-                <button className="w-full bg-teal-600 hover:bg-teal-700 py-3 rounded-xl font-semibold transition hover:shadow-lg hover:shadow-teal-600/25">
+                <button className="w-full bg-teal-600 hover:bg-teal-700 text-white py-3 rounded-xl font-semibold transition hover:shadow-lg hover:shadow-teal-600/25">
                   Send Message
                 </button>
               </div>
@@ -641,7 +641,7 @@ export default function HomePage() {
                 placeholder="Enter your email"
                 className="flex-1 bg-gray-50 border border-teal-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-teal-500 transition"
               />
-              <button className="bg-teal-600 hover:bg-teal-700 px-6 py-3 rounded-xl font-semibold text-sm transition whitespace-nowrap">
+              <button className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-xl font-semibold text-sm transition whitespace-nowrap">
                 Subscribe
               </button>
             </div>

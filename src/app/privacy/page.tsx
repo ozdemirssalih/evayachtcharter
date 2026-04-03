@@ -227,7 +227,7 @@ export default function PrivacyPage() {
             </div>
             <Link
               href="/contact"
-              className="bg-teal-600 hover:bg-teal-700 px-6 py-2.5 rounded-xl text-sm font-semibold transition whitespace-nowrap"
+              className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-2.5 rounded-xl text-sm font-semibold transition whitespace-nowrap"
             >
               Contact Us
             </Link>

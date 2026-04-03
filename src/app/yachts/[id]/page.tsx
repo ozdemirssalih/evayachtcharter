@@ -217,7 +217,7 @@ export default function YachtDetailPage() {
             alt={`${yacht.name} - Image ${currentImage + 1}`}
             className="w-full h-full object-cover transition-all duration-500"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0c1222] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
           {/* Navigation Arrows */}
           <button
@@ -311,7 +311,7 @@ export default function YachtDetailPage() {
                     key={tab}
                     onClick={() => setActiveTab(tab)}
                     className={`px-4 py-2 rounded-full text-sm font-medium capitalize whitespace-nowrap transition ${
-                      activeTab === tab ? 'bg-teal-600 text-gray-800' : 'glass text-gray-600 hover:text-gray-800'
+                      activeTab === tab ? 'bg-teal-600 text-white' : 'glass text-gray-600 hover:text-gray-800'
                     }`}
                   >
                     {tab}
@@ -340,7 +340,7 @@ export default function YachtDetailPage() {
                         { label: 'Fuel Capacity', value: yacht.fuelCapacity },
                         { label: 'Water Capacity', value: yacht.waterCapacity },
                       ].map(spec => (
-                        <div key={spec.label} className="flex justify-between items-center py-2 border-b border-white/5">
+                        <div key={spec.label} className="flex justify-between items-center py-2 border-b border-gray-100">
                           <span className="text-sm text-gray-600">{spec.label}</span>
                           <span className="text-sm font-semibold">{spec.value}</span>
                         </div>
@@ -362,7 +362,7 @@ export default function YachtDetailPage() {
                           }`}
                         >
                           <p className="text-xs font-semibold">{a.month}</p>
-                          <p className={`text-[10px] mt-1 ${a.available ? 'text-green-400' : 'text-red-400'}`}>
+                          <p className={`text-[10px] mt-1 ${a.available ? 'text-green-600' : 'text-red-500'}`}>
                             {a.available ? 'Available' : 'Booked'}
                           </p>
                         </div>
@@ -555,7 +555,7 @@ export default function YachtDetailPage() {
 
                 <Link
                   href={`/booking?yacht=${yacht.id}&start=${bookingDates.start}&end=${bookingDates.end}&guests=${bookingGuests}`}
-                  className="w-full bg-teal-600 hover:bg-teal-700 py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition block text-center"
+                  className="w-full bg-teal-600 hover:bg-teal-700 text-white py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition block text-center"
                 >
                   <ArrowRight className="w-4 h-4" /> Book Now
                 </Link>
@@ -585,7 +585,7 @@ export default function YachtDetailPage() {
           </div>
           <Link
             href={`/booking?yacht=${yacht.id}&guests=${bookingGuests}`}
-            className="bg-teal-600 hover:bg-teal-700 px-6 py-2.5 rounded-full text-sm font-semibold transition"
+            className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-2.5 rounded-full text-sm font-semibold transition"
           >
             Book Now
           </Link>

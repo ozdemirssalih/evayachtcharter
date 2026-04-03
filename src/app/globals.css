@@ -24,7 +24,7 @@ body {
 ::-webkit-scrollbar-thumb { background: rgba(10,186,181,0.4); border-radius: 4px; }
 
 /* Glass effect - light theme */
-.glass { background: rgba(255,255,255,0.8); backdrop-filter: blur(20px); border: 1px solid rgba(10,186,181,0.15); }
+.glass { background: rgba(255,255,255,0.85); backdrop-filter: blur(20px); border: 1px solid rgba(10,186,181,0.15); box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
 
 /* Tiffany gradient text (replaces gold-text) */
 .gold-text { background: linear-gradient(135deg, #0ABAB5, #5DE0DB, #089B97); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }

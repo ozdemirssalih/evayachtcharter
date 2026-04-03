@@ -96,10 +96,10 @@ const bookings = [
 ]
 
 const statusConfig: Record<string, { color: string; bg: string; icon: typeof CheckCircle; label: string }> = {
-  confirmed: { color: 'text-green-400', bg: 'bg-green-600/20', icon: CheckCircle, label: 'Confirmed' },
-  pending: { color: 'text-yellow-400', bg: 'bg-yellow-600/20', icon: AlertCircle, label: 'Pending' },
-  completed: { color: 'text-teal-500', bg: 'bg-teal-600/20', icon: CheckCircle, label: 'Completed' },
-  cancelled: { color: 'text-red-400', bg: 'bg-red-600/20', icon: XCircle, label: 'Cancelled' },
+  confirmed: { color: 'text-green-700', bg: 'bg-green-100', icon: CheckCircle, label: 'Confirmed' },
+  pending: { color: 'text-yellow-700', bg: 'bg-yellow-100', icon: AlertCircle, label: 'Pending' },
+  completed: { color: 'text-teal-700', bg: 'bg-teal-100', icon: CheckCircle, label: 'Completed' },
+  cancelled: { color: 'text-red-600', bg: 'bg-red-100', icon: XCircle, label: 'Cancelled' },
 }
 
 export default function BookingsPage() {
@@ -158,12 +158,12 @@ export default function BookingsPage() {
               onClick={() => setFilter(tab.id as typeof filter)}
               className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium whitespace-nowrap transition ${
                 filter === tab.id
-                  ? 'bg-teal-600 text-gray-800'
+                  ? 'bg-teal-600 text-white'
                   : 'glass text-gray-600 hover:text-gray-800'
               }`}
             >
               {tab.label}
-              <span className={`text-[10px] ${filter === tab.id ? 'bg-white/20' : 'bg-teal-50'} px-1.5 py-0.5 rounded-full`}>
+              <span className={`text-[10px] ${filter === tab.id ? 'bg-white/30' : 'bg-teal-100'} px-1.5 py-0.5 rounded-full`}>
                 {tab.count}
               </span>
             </button>
@@ -175,10 +175,10 @@ export default function BookingsPage() {
       <div className="px-4 space-y-4">
         {filteredBookings.length === 0 ? (
           <div className="text-center py-16">
-            <Calendar className="w-16 h-16 text-gray-700 mx-auto mb-4" />
+            <Calendar className="w-16 h-16 text-gray-300 mx-auto mb-4" />
             <h3 className="text-lg font-bold mb-2">No bookings found</h3>
             <p className="text-sm text-gray-600 mb-6">Start planning your next adventure</p>
-            <Link href="/yachts" className="bg-teal-600 hover:bg-teal-700 px-6 py-2.5 rounded-full text-sm font-semibold transition">
+            <Link href="/yachts" className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-2.5 rounded-full text-sm font-semibold transition">
               Browse Yachts
             </Link>
           </div>
@@ -214,7 +214,7 @@ export default function BookingsPage() {
                     <div className="flex items-center justify-between mt-2">
                       <span className="font-bold text-teal-500">&euro;{booking.totalPrice.toLocaleString()}</span>
                       {booking.status === 'confirmed' && daysUntil > 0 && (
-                        <span className="text-xs text-green-400">{daysUntil} days away</span>
+                        <span className="text-xs text-green-600">{daysUntil} days away</span>
                       )}
                     </div>
                   </div>
