@@ -187,16 +187,16 @@ export default function YachtDetailPage() {
   const totalPrice = days * yacht.price
 
   return (
-    <div className="min-h-screen bg-[#0c1222]">
+    <div className="min-h-screen bg-white">
       {/* Header */}
       <header className="fixed top-0 w-full z-50 safe-top">
         <div className="glass px-4 py-3 flex items-center justify-between">
-          <Link href="/yachts" className="flex items-center gap-2 text-gray-300 hover:text-white transition">
+          <Link href="/yachts" className="flex items-center gap-2 text-gray-600 hover:text-gray-800 transition">
             <ChevronLeft className="w-5 h-5" />
             <span className="text-sm">Back to Fleet</span>
           </Link>
           <div className="flex items-center gap-3">
-            <button className="glass p-2 rounded-full hover:bg-white/10 transition">
+            <button className="glass p-2 rounded-full hover:bg-teal-50 transition">
               <Share2 className="w-4 h-4" />
             </button>
             <button
@@ -239,7 +239,7 @@ export default function YachtDetailPage() {
               <button
                 key={idx}
                 onClick={() => setCurrentImage(idx)}
-                className={`w-2 h-2 rounded-full transition ${idx === currentImage ? 'bg-blue-400 w-6' : 'bg-white/40'}`}
+                className={`w-2 h-2 rounded-full transition ${idx === currentImage ? 'bg-teal-500 w-6' : 'bg-white/40'}`}
               />
             ))}
           </div>
@@ -251,7 +251,7 @@ export default function YachtDetailPage() {
                 key={idx}
                 onClick={() => setCurrentImage(idx)}
                 className={`w-16 h-12 rounded-lg overflow-hidden border-2 transition ${
-                  idx === currentImage ? 'border-blue-400' : 'border-transparent opacity-60 hover:opacity-100'
+                  idx === currentImage ? 'border-teal-500' : 'border-transparent opacity-60 hover:opacity-100'
                 }`}
               >
                 <img src={img} alt="" className="w-full h-full object-cover" />
@@ -269,8 +269,8 @@ export default function YachtDetailPage() {
                 <div className="flex items-start justify-between mb-2">
                   <div>
                     <div className="flex items-center gap-2 mb-1">
-                      <span className="glass px-2.5 py-1 rounded-full text-xs text-blue-300">{yacht.type}</span>
-                      <span className="flex items-center gap-1 text-xs text-gray-400">
+                      <span className="glass px-2.5 py-1 rounded-full text-xs text-teal-400">{yacht.type}</span>
+                      <span className="flex items-center gap-1 text-xs text-gray-600">
                         <MapPin className="w-3 h-3" />{yacht.destination}
                       </span>
                     </div>
@@ -281,7 +281,7 @@ export default function YachtDetailPage() {
                       <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
                       <span className="text-xl font-bold">{yacht.rating}</span>
                     </div>
-                    <p className="text-xs text-gray-500">{yacht.reviews} reviews</p>
+                    <p className="text-xs text-gray-600">{yacht.reviews} reviews</p>
                   </div>
                 </div>
 
@@ -296,9 +296,9 @@ export default function YachtDetailPage() {
                     { icon: Calendar, label: 'Built', value: String(yacht.year) },
                   ].map(spec => (
                     <div key={spec.label} className="glass rounded-xl p-3 text-center">
-                      <spec.icon className="w-4 h-4 text-blue-400 mx-auto mb-1" />
+                      <spec.icon className="w-4 h-4 text-teal-500 mx-auto mb-1" />
                       <p className="text-sm font-bold">{spec.value}</p>
-                      <p className="text-[10px] text-gray-500">{spec.label}</p>
+                      <p className="text-[10px] text-gray-600">{spec.label}</p>
                     </div>
                   ))}
                 </div>
@@ -311,7 +311,7 @@ export default function YachtDetailPage() {
                     key={tab}
                     onClick={() => setActiveTab(tab)}
                     className={`px-4 py-2 rounded-full text-sm font-medium capitalize whitespace-nowrap transition ${
-                      activeTab === tab ? 'bg-blue-600 text-white' : 'glass text-gray-400 hover:text-white'
+                      activeTab === tab ? 'bg-teal-600 text-gray-800' : 'glass text-gray-600 hover:text-gray-800'
                     }`}
                   >
                     {tab}
@@ -324,7 +324,7 @@ export default function YachtDetailPage() {
                 <div className="space-y-6">
                   <div className="glass rounded-2xl p-6">
                     <h2 className="text-lg font-bold mb-3">About This Yacht</h2>
-                    <p className="text-gray-400 text-sm leading-relaxed">{yacht.description}</p>
+                    <p className="text-gray-600 text-sm leading-relaxed">{yacht.description}</p>
                   </div>
 
                   <div className="glass rounded-2xl p-6">
@@ -341,7 +341,7 @@ export default function YachtDetailPage() {
                         { label: 'Water Capacity', value: yacht.waterCapacity },
                       ].map(spec => (
                         <div key={spec.label} className="flex justify-between items-center py-2 border-b border-white/5">
-                          <span className="text-sm text-gray-500">{spec.label}</span>
+                          <span className="text-sm text-gray-600">{spec.label}</span>
                           <span className="text-sm font-semibold">{spec.value}</span>
                         </div>
                       ))}
@@ -380,8 +380,8 @@ export default function YachtDetailPage() {
                       const Icon = amenityIcons[amenity] || Check
                       return (
                         <div key={amenity} className="flex items-center gap-3 py-2">
-                          <div className="w-10 h-10 rounded-xl bg-blue-600/20 flex items-center justify-center flex-shrink-0">
-                            <Icon className="w-5 h-5 text-blue-400" />
+                          <div className="w-10 h-10 rounded-xl bg-teal-600/20 flex items-center justify-center flex-shrink-0">
+                            <Icon className="w-5 h-5 text-teal-500" />
                           </div>
                           <span className="text-sm">{amenity}</span>
                         </div>
@@ -397,14 +397,14 @@ export default function YachtDetailPage() {
                     <h2 className="text-lg font-bold mb-4">Meet the Crew</h2>
                     <div className="space-y-4">
                       {yacht.crewMembers.map(member => (
-                        <div key={member.role} className="flex items-center gap-4 p-4 bg-white/5 rounded-xl">
-                          <div className="w-14 h-14 rounded-full bg-blue-600/20 flex items-center justify-center flex-shrink-0">
-                            <Users className="w-6 h-6 text-blue-400" />
+                        <div key={member.role} className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl">
+                          <div className="w-14 h-14 rounded-full bg-teal-600/20 flex items-center justify-center flex-shrink-0">
+                            <Users className="w-6 h-6 text-teal-500" />
                           </div>
                           <div>
                             <p className="font-semibold">{member.name}</p>
-                            <p className="text-sm text-blue-400">{member.role}</p>
-                            <p className="text-xs text-gray-500">{member.experience} experience</p>
+                            <p className="text-sm text-teal-500">{member.role}</p>
+                            <p className="text-xs text-gray-600">{member.experience} experience</p>
                           </div>
                         </div>
                       ))}
@@ -418,7 +418,7 @@ export default function YachtDetailPage() {
                   <div className="glass rounded-2xl p-6 mb-4">
                     <div className="flex items-center gap-4">
                       <div className="text-center">
-                        <p className="text-4xl font-bold text-blue-400">{yacht.rating}</p>
+                        <p className="text-4xl font-bold text-teal-500">{yacht.rating}</p>
                         <div className="flex items-center gap-0.5 mt-1">
                           {[1, 2, 3, 4, 5].map(s => (
                             <Star
@@ -427,7 +427,7 @@ export default function YachtDetailPage() {
                             />
                           ))}
                         </div>
-                        <p className="text-xs text-gray-500 mt-1">{yacht.reviews} reviews</p>
+                        <p className="text-xs text-gray-600 mt-1">{yacht.reviews} reviews</p>
                       </div>
                       <div className="flex-1 space-y-1">
                         {[5, 4, 3, 2, 1].map(stars => {
@@ -435,9 +435,9 @@ export default function YachtDetailPage() {
                           const pct = yacht.reviewsList.length > 0 ? (count / yacht.reviewsList.length) * 100 : 0
                           return (
                             <div key={stars} className="flex items-center gap-2">
-                              <span className="text-xs text-gray-500 w-3">{stars}</span>
+                              <span className="text-xs text-gray-600 w-3">{stars}</span>
                               <Star className="w-3 h-3 text-yellow-400 fill-yellow-400" />
-                              <div className="flex-1 h-2 bg-white/10 rounded-full overflow-hidden">
+                              <div className="flex-1 h-2 bg-teal-50 rounded-full overflow-hidden">
                                 <div className="h-full bg-yellow-400 rounded-full" style={{ width: `${pct}%` }} />
                               </div>
                             </div>
@@ -451,12 +451,12 @@ export default function YachtDetailPage() {
                     <div key={idx} className="glass rounded-2xl p-5">
                       <div className="flex items-center justify-between mb-3">
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-full bg-blue-600/20 flex items-center justify-center">
-                            <MessageSquare className="w-5 h-5 text-blue-400" />
+                          <div className="w-10 h-10 rounded-full bg-teal-600/20 flex items-center justify-center">
+                            <MessageSquare className="w-5 h-5 text-teal-500" />
                           </div>
                           <div>
                             <p className="font-semibold text-sm">{review.name}</p>
-                            <p className="text-xs text-gray-500">{review.date}</p>
+                            <p className="text-xs text-gray-600">{review.date}</p>
                           </div>
                         </div>
                         <div className="flex items-center gap-0.5">
@@ -468,9 +468,9 @@ export default function YachtDetailPage() {
                           ))}
                         </div>
                       </div>
-                      <p className="text-sm text-gray-400 leading-relaxed">{review.text}</p>
+                      <p className="text-sm text-gray-600 leading-relaxed">{review.text}</p>
                       <div className="flex items-center gap-4 mt-3">
-                        <button className="flex items-center gap-1 text-xs text-gray-500 hover:text-gray-300 transition">
+                        <button className="flex items-center gap-1 text-xs text-gray-600 hover:text-gray-600 transition">
                           <ThumbsUp className="w-3 h-3" /> Helpful
                         </button>
                       </div>
@@ -485,8 +485,8 @@ export default function YachtDetailPage() {
               <div className="glass rounded-2xl p-6 sticky top-20">
                 <div className="flex items-center justify-between mb-4">
                   <div>
-                    <span className="text-3xl font-bold text-blue-400">&euro;{yacht.price.toLocaleString()}</span>
-                    <span className="text-sm text-gray-500"> / day</span>
+                    <span className="text-3xl font-bold text-teal-500">&euro;{yacht.price.toLocaleString()}</span>
+                    <span className="text-sm text-gray-600"> / day</span>
                   </div>
                   <div className="flex items-center gap-1">
                     <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
@@ -496,37 +496,37 @@ export default function YachtDetailPage() {
 
                 <div className="space-y-3 mb-4">
                   <div>
-                    <label className="text-xs text-gray-400 mb-1 block">Check-in</label>
-                    <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl px-3 py-2.5">
-                      <Calendar className="w-4 h-4 text-blue-400 flex-shrink-0" />
+                    <label className="text-xs text-gray-600 mb-1 block">Check-in</label>
+                    <div className="flex items-center gap-2 bg-gray-50 border border-teal-200 rounded-xl px-3 py-2.5">
+                      <Calendar className="w-4 h-4 text-teal-500 flex-shrink-0" />
                       <input
                         type="date"
                         value={bookingDates.start}
                         onChange={e => setBookingDates(prev => ({ ...prev, start: e.target.value }))}
-                        className="bg-transparent text-sm w-full outline-none text-white"
+                        className="bg-transparent text-sm w-full outline-none text-gray-800"
                       />
                     </div>
                   </div>
                   <div>
-                    <label className="text-xs text-gray-400 mb-1 block">Check-out</label>
-                    <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl px-3 py-2.5">
-                      <Calendar className="w-4 h-4 text-blue-400 flex-shrink-0" />
+                    <label className="text-xs text-gray-600 mb-1 block">Check-out</label>
+                    <div className="flex items-center gap-2 bg-gray-50 border border-teal-200 rounded-xl px-3 py-2.5">
+                      <Calendar className="w-4 h-4 text-teal-500 flex-shrink-0" />
                       <input
                         type="date"
                         value={bookingDates.end}
                         onChange={e => setBookingDates(prev => ({ ...prev, end: e.target.value }))}
-                        className="bg-transparent text-sm w-full outline-none text-white"
+                        className="bg-transparent text-sm w-full outline-none text-gray-800"
                       />
                     </div>
                   </div>
                   <div>
-                    <label className="text-xs text-gray-400 mb-1 block">Guests</label>
-                    <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl px-3 py-2.5">
-                      <Users className="w-4 h-4 text-blue-400 flex-shrink-0" />
+                    <label className="text-xs text-gray-600 mb-1 block">Guests</label>
+                    <div className="flex items-center gap-2 bg-gray-50 border border-teal-200 rounded-xl px-3 py-2.5">
+                      <Users className="w-4 h-4 text-teal-500 flex-shrink-0" />
                       <select
                         value={bookingGuests}
                         onChange={e => setBookingGuests(Number(e.target.value))}
-                        className="bg-transparent text-sm w-full outline-none text-white"
+                        className="bg-transparent text-sm w-full outline-none text-gray-800"
                       >
                         {Array.from({ length: yacht.guests }, (_, i) => i + 1).map(n => (
                           <option key={n} value={n} className="text-black">{n} guest{n > 1 ? 's' : ''}</option>
@@ -537,37 +537,37 @@ export default function YachtDetailPage() {
                 </div>
 
                 {days > 0 && (
-                  <div className="border-t border-white/10 pt-4 mb-4 space-y-2">
+                  <div className="border-t border-teal-200 pt-4 mb-4 space-y-2">
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-400">&euro;{yacht.price.toLocaleString()} x {days} days</span>
+                      <span className="text-gray-600">&euro;{yacht.price.toLocaleString()} x {days} days</span>
                       <span>&euro;{totalPrice.toLocaleString()}</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-400">Service fee</span>
+                      <span className="text-gray-600">Service fee</span>
                       <span>&euro;{Math.round(totalPrice * 0.05).toLocaleString()}</span>
                     </div>
-                    <div className="flex justify-between font-bold pt-2 border-t border-white/10">
+                    <div className="flex justify-between font-bold pt-2 border-t border-teal-200">
                       <span>Total</span>
-                      <span className="text-blue-400">&euro;{Math.round(totalPrice * 1.05).toLocaleString()}</span>
+                      <span className="text-teal-500">&euro;{Math.round(totalPrice * 1.05).toLocaleString()}</span>
                     </div>
                   </div>
                 )}
 
                 <Link
                   href={`/booking?yacht=${yacht.id}&start=${bookingDates.start}&end=${bookingDates.end}&guests=${bookingGuests}`}
-                  className="w-full bg-blue-600 hover:bg-blue-700 py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition block text-center"
+                  className="w-full bg-teal-600 hover:bg-teal-700 py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition block text-center"
                 >
                   <ArrowRight className="w-4 h-4" /> Book Now
                 </Link>
 
                 <div className="flex items-center gap-2 mt-4 justify-center">
                   <Shield className="w-4 h-4 text-green-400" />
-                  <span className="text-xs text-gray-500">Free cancellation up to 14 days before</span>
+                  <span className="text-xs text-gray-600">Free cancellation up to 14 days before</span>
                 </div>
 
-                <div className="mt-4 pt-4 border-t border-white/10">
-                  <button className="w-full glass py-2.5 rounded-xl text-sm flex items-center justify-center gap-2 hover:bg-white/10 transition">
-                    <Phone className="w-4 h-4 text-blue-400" /> Contact Charter Manager
+                <div className="mt-4 pt-4 border-t border-teal-200">
+                  <button className="w-full glass py-2.5 rounded-xl text-sm flex items-center justify-center gap-2 hover:bg-teal-50 transition">
+                    <Phone className="w-4 h-4 text-teal-500" /> Contact Charter Manager
                   </button>
                 </div>
               </div>
@@ -580,12 +580,12 @@ export default function YachtDetailPage() {
       <div className="fixed bottom-0 w-full glass safe-bottom z-50 lg:hidden">
         <div className="flex items-center justify-between px-4 py-3">
           <div>
-            <span className="text-xl font-bold text-blue-400">&euro;{yacht.price.toLocaleString()}</span>
-            <span className="text-xs text-gray-500"> / day</span>
+            <span className="text-xl font-bold text-teal-500">&euro;{yacht.price.toLocaleString()}</span>
+            <span className="text-xs text-gray-600"> / day</span>
           </div>
           <Link
             href={`/booking?yacht=${yacht.id}&guests=${bookingGuests}`}
-            className="bg-blue-600 hover:bg-blue-700 px-6 py-2.5 rounded-full text-sm font-semibold transition"
+            className="bg-teal-600 hover:bg-teal-700 px-6 py-2.5 rounded-full text-sm font-semibold transition"
           >
             Book Now
           </Link>

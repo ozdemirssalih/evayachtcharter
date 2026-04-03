@@ -13,16 +13,16 @@ export default function DashboardPage() {
   const [tab, setTab] = useState('home')
 
   return (
-    <div className="min-h-screen bg-[#0c1222] pb-20 safe-top">
+    <div className="min-h-screen bg-white pb-20 safe-top">
       {/* Top Bar */}
       <div className="glass px-4 py-3 flex items-center justify-between">
         <div>
-          <p className="text-xs text-gray-400">Welcome back</p>
+          <p className="text-xs text-gray-600">Welcome back</p>
           <p className="font-bold">Captain</p>
         </div>
         <div className="flex items-center gap-3">
-          <button className="relative"><Bell className="w-5 h-5 text-gray-400" /><div className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full" /></button>
-          <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-xs font-bold">E</div>
+          <button className="relative"><Bell className="w-5 h-5 text-gray-600" /><div className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full" /></button>
+          <div className="w-8 h-8 rounded-full bg-teal-600 flex items-center justify-center text-xs font-bold">E</div>
         </div>
       </div>
 
@@ -33,14 +33,14 @@ export default function DashboardPage() {
             {/* Quick Stats */}
             <div className="grid grid-cols-3 gap-3 mb-6">
               {[
-                { icon: Ship, label: 'Bookings', value: '2', color: 'text-blue-400' },
+                { icon: Ship, label: 'Bookings', value: '2', color: 'text-teal-500' },
                 { icon: Heart, label: 'Favorites', value: '5', color: 'text-red-400' },
                 { icon: Star, label: 'Points', value: '1,200', color: 'text-yellow-400' },
               ].map(s => (
                 <div key={s.label} className="glass rounded-xl p-3 text-center">
                   <s.icon className={`w-5 h-5 mx-auto mb-1 ${s.color}`} />
                   <p className="text-lg font-bold">{s.value}</p>
-                  <p className="text-[10px] text-gray-500">{s.label}</p>
+                  <p className="text-[10px] text-gray-600">{s.label}</p>
                 </div>
               ))}
             </div>
@@ -49,7 +49,7 @@ export default function DashboardPage() {
             <div className="mb-6">
               <div className="flex items-center justify-between mb-3">
                 <h2 className="font-bold">Upcoming Bookings</h2>
-                <button className="text-xs text-blue-400">View All</button>
+                <button className="text-xs text-teal-500">View All</button>
               </div>
               <div className="space-y-3">
                 {bookings.map(b => (
@@ -60,10 +60,10 @@ export default function DashboardPage() {
                         {b.status}
                       </span>
                     </div>
-                    <div className="flex items-center gap-4 text-xs text-gray-400">
+                    <div className="flex items-center gap-4 text-xs text-gray-600">
                       <span className="flex items-center gap-1"><Calendar className="w-3 h-3" />{b.date}</span>
                       <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{b.days} days</span>
-                      <span className="font-semibold text-blue-400">{b.price}</span>
+                      <span className="font-semibold text-teal-500">{b.price}</span>
                     </div>
                   </div>
                 ))}
@@ -80,8 +80,8 @@ export default function DashboardPage() {
                   { icon: Calendar, label: 'My Bookings', href: '#' },
                   { icon: Settings, label: 'Settings', href: '#' },
                 ].map(a => (
-                  <Link key={a.label} href={a.href} className="glass rounded-xl p-4 flex items-center gap-3 hover:bg-white/5 transition">
-                    <a.icon className="w-5 h-5 text-blue-400" />
+                  <Link key={a.label} href={a.href} className="glass rounded-xl p-4 flex items-center gap-3 hover:bg-gray-50 transition">
+                    <a.icon className="w-5 h-5 text-teal-500" />
                     <span className="text-sm">{a.label}</span>
                   </Link>
                 ))}
@@ -91,13 +91,13 @@ export default function DashboardPage() {
             {/* Special Offers */}
             <div>
               <h2 className="font-bold mb-3">Special Offers</h2>
-              <div className="glass rounded-xl p-4 bg-gradient-to-r from-blue-600/20 to-purple-600/20 border-blue-500/20">
+              <div className="glass rounded-xl p-4 bg-gradient-to-r from-teal-600/20 to-purple-600/20 border-teal-500/20">
                 <div className="flex items-center gap-2 mb-2">
-                  <Waves className="w-5 h-5 text-blue-400" />
+                  <Waves className="w-5 h-5 text-teal-500" />
                   <span className="text-sm font-semibold">Early Bird Discount</span>
                 </div>
-                <p className="text-xs text-gray-400 mb-3">Book 30 days in advance and get 15% off on any yacht charter.</p>
-                <button className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-full text-xs font-semibold transition">Book Now</button>
+                <p className="text-xs text-gray-600 mb-3">Book 30 days in advance and get 15% off on any yacht charter.</p>
+                <button className="bg-teal-600 hover:bg-teal-700 px-4 py-2 rounded-full text-xs font-semibold transition">Book Now</button>
               </div>
             </div>
           </>
@@ -107,7 +107,7 @@ export default function DashboardPage() {
           <div className="text-center py-12">
             <Search className="w-12 h-12 text-gray-600 mx-auto mb-4" />
             <h2 className="font-bold mb-2">Search Yachts</h2>
-            <p className="text-sm text-gray-500">Find your perfect yacht</p>
+            <p className="text-sm text-gray-600">Find your perfect yacht</p>
           </div>
         )}
 
@@ -115,7 +115,7 @@ export default function DashboardPage() {
           <div className="text-center py-12">
             <Heart className="w-12 h-12 text-gray-600 mx-auto mb-4" />
             <h2 className="font-bold mb-2">Favorites</h2>
-            <p className="text-sm text-gray-500">Your saved yachts</p>
+            <p className="text-sm text-gray-600">Your saved yachts</p>
           </div>
         )}
 
@@ -123,7 +123,7 @@ export default function DashboardPage() {
           <div className="text-center py-12">
             <User className="w-12 h-12 text-gray-600 mx-auto mb-4" />
             <h2 className="font-bold mb-2">Profile</h2>
-            <p className="text-sm text-gray-500">Account settings</p>
+            <p className="text-sm text-gray-600">Account settings</p>
           </div>
         )}
       </div>
@@ -140,7 +140,7 @@ export default function DashboardPage() {
             <button
               key={item.id}
               onClick={() => setTab(item.id)}
-              className={`flex flex-col items-center gap-0.5 py-1 px-4 ${tab === item.id ? 'text-blue-400' : 'text-gray-500'}`}
+              className={`flex flex-col items-center gap-0.5 py-1 px-4 ${tab === item.id ? 'text-teal-500' : 'text-gray-600'}`}
             >
               <item.icon className="w-5 h-5" />
               <span className="text-[10px]">{item.label}</span>

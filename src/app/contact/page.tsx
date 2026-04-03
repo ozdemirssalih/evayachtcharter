@@ -54,23 +54,23 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0c1222]">
+    <div className="min-h-screen bg-white">
       <Navbar />
 
       <div className="pt-16">
         {/* Hero */}
         <div className="relative h-56 md:h-72 overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1559599238-308793637427?w=1920&q=80')] bg-cover bg-center opacity-10" />
-          <div className="absolute inset-0 bg-gradient-to-b from-blue-900/20 via-transparent to-[#0c1222]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-teal-900/20 via-transparent to-white" />
           <div className="relative z-10 h-full flex flex-col items-center justify-center px-4 text-center">
             <div className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full mb-4">
-              <Headphones className="w-4 h-4 text-blue-400" />
-              <span className="text-xs text-gray-300">We're Here to Help</span>
+              <Headphones className="w-4 h-4 text-teal-500" />
+              <span className="text-xs text-gray-600">We're Here to Help</span>
             </div>
             <h1 className="text-3xl md:text-5xl font-bold mb-3">
               Get In <span className="gold-text">Touch</span>
             </h1>
-            <p className="text-gray-400 text-sm max-w-lg">
+            <p className="text-gray-600 text-sm max-w-lg">
               Our charter specialists are ready to help you plan the perfect voyage
             </p>
           </div>
@@ -81,13 +81,13 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 -mt-8 relative z-20 mb-12">
             <a
               href="tel:+905321234567"
-              className="glass rounded-2xl p-5 text-center hover:border-blue-500/30 transition group"
+              className="glass rounded-2xl p-5 text-center hover:border-teal-500/30 transition group"
             >
-              <div className="w-12 h-12 rounded-full bg-blue-600/20 flex items-center justify-center mx-auto mb-3 group-hover:bg-blue-600/30 transition">
-                <Phone className="w-5 h-5 text-blue-400" />
+              <div className="w-12 h-12 rounded-full bg-teal-600/20 flex items-center justify-center mx-auto mb-3 group-hover:bg-teal-600/30 transition">
+                <Phone className="w-5 h-5 text-teal-500" />
               </div>
               <h3 className="font-bold text-sm mb-1">Call Us</h3>
-              <p className="text-xs text-gray-500">+90 532 XXX XX XX</p>
+              <p className="text-xs text-gray-600">+90 532 XXX XX XX</p>
             </a>
 
             <a
@@ -100,18 +100,18 @@ export default function ContactPage() {
                 <MessageCircle className="w-5 h-5 text-green-400" />
               </div>
               <h3 className="font-bold text-sm mb-1">WhatsApp</h3>
-              <p className="text-xs text-gray-500">Quick response</p>
+              <p className="text-xs text-gray-600">Quick response</p>
             </a>
 
             <a
               href="mailto:info@evayachtcharter.com"
-              className="glass rounded-2xl p-5 text-center hover:border-blue-500/30 transition group"
+              className="glass rounded-2xl p-5 text-center hover:border-teal-500/30 transition group"
             >
               <div className="w-12 h-12 rounded-full bg-purple-600/20 flex items-center justify-center mx-auto mb-3 group-hover:bg-purple-600/30 transition">
                 <Mail className="w-5 h-5 text-purple-400" />
               </div>
               <h3 className="font-bold text-sm mb-1">Email</h3>
-              <p className="text-xs text-gray-500">info@evayachtcharter.com</p>
+              <p className="text-xs text-gray-600">info@evayachtcharter.com</p>
             </a>
 
             <button
@@ -122,7 +122,7 @@ export default function ContactPage() {
                 <Headphones className="w-5 h-5 text-orange-400" />
               </div>
               <h3 className="font-bold text-sm mb-1">Live Chat</h3>
-              <p className="text-xs text-gray-500">Online now</p>
+              <p className="text-xs text-gray-600">Online now</p>
             </button>
           </div>
 
@@ -131,7 +131,7 @@ export default function ContactPage() {
             {/* Contact Form */}
             <div className="glass rounded-3xl p-6 md:p-8">
               <h2 className="text-xl font-bold mb-1">Send Us a Message</h2>
-              <p className="text-sm text-gray-500 mb-6">We typically respond within 2 hours during business hours</p>
+              <p className="text-sm text-gray-600 mb-6">We typically respond within 2 hours during business hours</p>
 
               {submitted ? (
                 <div className="text-center py-12">
@@ -139,7 +139,7 @@ export default function ContactPage() {
                     <CheckCircle className="w-8 h-8 text-green-400" />
                   </div>
                   <h3 className="text-lg font-bold mb-2">Message Sent!</h3>
-                  <p className="text-sm text-gray-400">
+                  <p className="text-sm text-gray-600">
                     Thank you for reaching out. Our team will get back to you shortly.
                   </p>
                 </div>
@@ -147,45 +147,45 @@ export default function ContactPage() {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="text-xs text-gray-400 mb-1 block">Full Name *</label>
+                      <label className="text-xs text-gray-600 mb-1 block">Full Name *</label>
                       <input
                         required
                         placeholder="John Doe"
                         value={form.name}
                         onChange={e => setForm({ ...form, name: e.target.value })}
-                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm outline-none focus:border-blue-500 transition"
+                        className="w-full bg-gray-50 border border-teal-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-teal-500 transition"
                       />
                     </div>
                     <div>
-                      <label className="text-xs text-gray-400 mb-1 block">Email *</label>
+                      <label className="text-xs text-gray-600 mb-1 block">Email *</label>
                       <input
                         required
                         type="email"
                         placeholder="john@example.com"
                         value={form.email}
                         onChange={e => setForm({ ...form, email: e.target.value })}
-                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm outline-none focus:border-blue-500 transition"
+                        className="w-full bg-gray-50 border border-teal-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-teal-500 transition"
                       />
                     </div>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="text-xs text-gray-400 mb-1 block">Phone</label>
+                      <label className="text-xs text-gray-600 mb-1 block">Phone</label>
                       <input
                         type="tel"
                         placeholder="+90 5XX XXX XX XX"
                         value={form.phone}
                         onChange={e => setForm({ ...form, phone: e.target.value })}
-                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm outline-none focus:border-blue-500 transition"
+                        className="w-full bg-gray-50 border border-teal-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-teal-500 transition"
                       />
                     </div>
                     <div>
-                      <label className="text-xs text-gray-400 mb-1 block">Subject *</label>
+                      <label className="text-xs text-gray-600 mb-1 block">Subject *</label>
                       <select
                         required
                         value={form.subject}
                         onChange={e => setForm({ ...form, subject: e.target.value })}
-                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm outline-none focus:border-blue-500 transition appearance-none text-white"
+                        className="w-full bg-gray-50 border border-teal-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-teal-500 transition appearance-none text-gray-800"
                       >
                         <option value="" className="text-black">Select a topic</option>
                         <option value="booking" className="text-black">New Booking Inquiry</option>
@@ -198,20 +198,20 @@ export default function ContactPage() {
                     </div>
                   </div>
                   <div>
-                    <label className="text-xs text-gray-400 mb-1 block">Message *</label>
+                    <label className="text-xs text-gray-600 mb-1 block">Message *</label>
                     <textarea
                       required
                       rows={5}
                       placeholder="Tell us about your dream charter..."
                       value={form.message}
                       onChange={e => setForm({ ...form, message: e.target.value })}
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm outline-none focus:border-blue-500 transition resize-none"
+                      className="w-full bg-gray-50 border border-teal-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-teal-500 transition resize-none"
                     />
                   </div>
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full bg-blue-600 hover:bg-blue-700 py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition disabled:opacity-50"
+                    className="w-full bg-teal-600 hover:bg-teal-700 py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition disabled:opacity-50"
                   >
                     {loading ? (
                       <Loader2 className="w-4 h-4 animate-spin" />
@@ -229,7 +229,7 @@ export default function ContactPage() {
             <div className="space-y-6">
               {/* Google Maps Embed Area */}
               <div className="glass rounded-3xl overflow-hidden h-64 md:h-80 relative">
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0c1222]/50 z-10 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/50 z-10 pointer-events-none" />
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3191.5!2d27.4305!3d37.0344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDAyJzA0LjAiTiAyN8KwMjUnNDkuOCJF!5e0!3m2!1sen!2str!4v1680000000000!5m2!1sen!2str"
                   width="100%"
@@ -245,20 +245,20 @@ export default function ContactPage() {
               {/* Office Hours */}
               <div className="glass rounded-2xl p-5">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-blue-600/20 flex items-center justify-center">
-                    <Clock className="w-5 h-5 text-blue-400" />
+                  <div className="w-10 h-10 rounded-full bg-teal-600/20 flex items-center justify-center">
+                    <Clock className="w-5 h-5 text-teal-500" />
                   </div>
                   <h3 className="font-bold">Office Hours</h3>
                 </div>
                 <div className="space-y-2">
                   {officeHours.map(oh => (
                     <div key={oh.day} className="flex items-center justify-between text-sm">
-                      <span className="text-gray-400">{oh.day}</span>
-                      <span className="font-semibold text-white">{oh.hours}</span>
+                      <span className="text-gray-600">{oh.day}</span>
+                      <span className="font-semibold text-gray-800">{oh.hours}</span>
                     </div>
                   ))}
                 </div>
-                <div className="mt-4 pt-4 border-t border-white/10">
+                <div className="mt-4 pt-4 border-t border-teal-200">
                   <div className="flex items-center gap-2 text-sm">
                     <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
                     <span className="text-green-400 font-medium">24/7 Emergency Line Available</span>
@@ -272,7 +272,7 @@ export default function ContactPage() {
                 <div className="flex items-center gap-3">
                   {[
                     { icon: Camera, label: 'Instagram', href: '#', color: 'hover:bg-pink-600/20 hover:border-pink-500/30' },
-                    { icon: Globe, label: 'Facebook', href: '#', color: 'hover:bg-blue-600/20 hover:border-blue-500/30' },
+                    { icon: Globe, label: 'Facebook', href: '#', color: 'hover:bg-teal-600/20 hover:border-teal-500/30' },
                     { icon: MessageCircle, label: 'Twitter', href: '#', color: 'hover:bg-sky-600/20 hover:border-sky-500/30' },
                     { icon: Globe, label: 'Website', href: '/', color: 'hover:bg-green-600/20 hover:border-green-500/30' },
                   ].map((social, idx) => (
@@ -282,7 +282,7 @@ export default function ContactPage() {
                       className={`glass w-12 h-12 rounded-xl flex items-center justify-center transition ${social.color}`}
                       aria-label={social.label}
                     >
-                      <social.icon className="w-5 h-5 text-gray-400" />
+                      <social.icon className="w-5 h-5 text-gray-600" />
                     </a>
                   ))}
                 </div>
@@ -295,25 +295,25 @@ export default function ContactPage() {
             <h2 className="text-2xl font-bold text-center mb-8">Our <span className="gold-text">Offices</span></h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {offices.map(office => (
-                <div key={office.name} className="glass rounded-2xl p-6 hover:border-blue-500/30 transition">
+                <div key={office.name} className="glass rounded-2xl p-6 hover:border-teal-500/30 transition">
                   <h3 className="font-bold mb-3">{office.name}</h3>
                   <div className="space-y-3">
-                    <div className="flex items-start gap-2 text-sm text-gray-400">
-                      <MapPin className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />
+                    <div className="flex items-start gap-2 text-sm text-gray-600">
+                      <MapPin className="w-4 h-4 text-teal-500 flex-shrink-0 mt-0.5" />
                       <span>{office.address}</span>
                     </div>
                     <a
                       href={`tel:${office.phone.replace(/\s/g, '')}`}
-                      className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition"
+                      className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-800 transition"
                     >
-                      <Phone className="w-4 h-4 text-blue-400" />
+                      <Phone className="w-4 h-4 text-teal-500" />
                       {office.phone}
                     </a>
                     <a
                       href={`mailto:${office.email}`}
-                      className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition"
+                      className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-800 transition"
                     >
-                      <Mail className="w-4 h-4 text-blue-400" />
+                      <Mail className="w-4 h-4 text-teal-500" />
                       {office.email}
                     </a>
                   </div>
@@ -326,7 +326,7 @@ export default function ContactPage() {
           <div className="glass rounded-3xl p-8 text-center bg-gradient-to-r from-green-600/10 to-emerald-600/10">
             <MessageCircle className="w-12 h-12 text-green-400 mx-auto mb-4" />
             <h2 className="text-2xl font-bold mb-2">Prefer WhatsApp?</h2>
-            <p className="text-gray-400 text-sm mb-6 max-w-md mx-auto">
+            <p className="text-gray-600 text-sm mb-6 max-w-md mx-auto">
               Send us a message on WhatsApp for the fastest response. Our team is online and ready to assist.
             </p>
             <a
@@ -344,13 +344,13 @@ export default function ContactPage() {
       {/* Live Chat Placeholder */}
       {showChat && (
         <div className="fixed bottom-4 right-4 z-50 w-80 animate-in">
-          <div className="glass rounded-2xl overflow-hidden border border-blue-500/20 shadow-2xl">
-            <div className="bg-blue-600 px-4 py-3 flex items-center justify-between">
+          <div className="glass rounded-2xl overflow-hidden border border-teal-500/20 shadow-2xl">
+            <div className="bg-teal-600 px-4 py-3 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
                 <span className="text-sm font-semibold">Live Chat</span>
               </div>
-              <button onClick={() => setShowChat(false)} className="text-white/70 hover:text-white text-lg leading-none">
+              <button onClick={() => setShowChat(false)} className="text-gray-800/70 hover:text-gray-800 text-lg leading-none">
                 &times;
               </button>
             </div>
@@ -358,16 +358,16 @@ export default function ContactPage() {
               <div className="flex-1 flex items-center justify-center">
                 <div className="text-center">
                   <Headphones className="w-10 h-10 text-gray-600 mx-auto mb-3" />
-                  <p className="text-sm text-gray-400 mb-1">Chat with our team</p>
+                  <p className="text-sm text-gray-600 mb-1">Chat with our team</p>
                   <p className="text-xs text-gray-600">Typically replies within minutes</p>
                 </div>
               </div>
               <div className="flex gap-2">
                 <input
                   placeholder="Type a message..."
-                  className="flex-1 bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-sm outline-none focus:border-blue-500 transition"
+                  className="flex-1 bg-gray-50 border border-teal-200 rounded-xl px-3 py-2 text-sm outline-none focus:border-teal-500 transition"
                 />
-                <button className="bg-blue-600 hover:bg-blue-700 p-2 rounded-xl transition">
+                <button className="bg-teal-600 hover:bg-teal-700 p-2 rounded-xl transition">
                   <Send className="w-4 h-4" />
                 </button>
               </div>

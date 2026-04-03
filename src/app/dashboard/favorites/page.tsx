@@ -93,11 +93,11 @@ export default function FavoritesPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0c1222] pb-20 safe-top">
+    <div className="min-h-screen bg-white pb-20 safe-top">
       {/* Top Bar */}
       <div className="glass px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <Link href="/dashboard" className="text-gray-400 hover:text-white transition">
+          <Link href="/dashboard" className="text-gray-600 hover:text-gray-800 transition">
             <ChevronRight className="w-5 h-5 rotate-180" />
           </Link>
           <h1 className="font-bold text-lg">Saved Yachts</h1>
@@ -113,12 +113,12 @@ export default function FavoritesPage() {
           <div className="text-center py-20">
             <Heart className="w-16 h-16 text-gray-700 mx-auto mb-4" />
             <h3 className="text-xl font-bold mb-2">No saved yachts yet</h3>
-            <p className="text-sm text-gray-500 mb-6">
+            <p className="text-sm text-gray-600 mb-6">
               Browse our fleet and save your favorite yachts for later
             </p>
             <Link
               href="/yachts"
-              className="bg-blue-600 hover:bg-blue-700 px-6 py-2.5 rounded-full text-sm font-semibold transition inline-flex items-center gap-2"
+              className="bg-teal-600 hover:bg-teal-700 px-6 py-2.5 rounded-full text-sm font-semibold transition inline-flex items-center gap-2"
             >
               <Search className="w-4 h-4" /> Browse Yachts
             </Link>
@@ -128,7 +128,7 @@ export default function FavoritesPage() {
             {favorites.map(yacht => (
               <div
                 key={yacht.id}
-                className={`glass rounded-2xl overflow-hidden hover:border-blue-500/30 transition-all ${
+                className={`glass rounded-2xl overflow-hidden hover:border-teal-500/30 transition-all ${
                   removingId === yacht.id ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
                 }`}
                 style={{ transition: 'all 0.3s ease' }}
@@ -144,7 +144,7 @@ export default function FavoritesPage() {
                   <div className="flex-1 p-4">
                     <div className="flex items-start justify-between mb-1">
                       <Link href={`/yachts/${yacht.id}`}>
-                        <h3 className="font-bold hover:text-blue-400 transition">{yacht.name}</h3>
+                        <h3 className="font-bold hover:text-teal-500 transition">{yacht.name}</h3>
                       </Link>
                       <button
                         onClick={() => handleRemove(yacht.id)}
@@ -155,12 +155,12 @@ export default function FavoritesPage() {
                       </button>
                     </div>
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="text-xs glass px-2 py-0.5 rounded-full text-blue-300">{yacht.type}</span>
-                      <span className="flex items-center gap-1 text-xs text-gray-500">
+                      <span className="text-xs glass px-2 py-0.5 rounded-full text-teal-400">{yacht.type}</span>
+                      <span className="flex items-center gap-1 text-xs text-gray-600">
                         <MapPin className="w-3 h-3" />{yacht.destination}
                       </span>
                     </div>
-                    <div className="flex items-center gap-3 text-xs text-gray-400 mb-2">
+                    <div className="flex items-center gap-3 text-xs text-gray-600 mb-2">
                       <span className="flex items-center gap-1"><Navigation className="w-3 h-3" />{yacht.length}</span>
                       <span className="flex items-center gap-1"><Users className="w-3 h-3" />{yacht.guests}</span>
                       <span className="flex items-center gap-1"><Wind className="w-3 h-3" />{yacht.cabins} cab.</span>
@@ -170,12 +170,12 @@ export default function FavoritesPage() {
                     </div>
                     <div className="flex items-center justify-between">
                       <div>
-                        <span className="text-lg font-bold text-blue-400">&euro;{yacht.price.toLocaleString()}</span>
-                        <span className="text-xs text-gray-500"> / day</span>
+                        <span className="text-lg font-bold text-teal-500">&euro;{yacht.price.toLocaleString()}</span>
+                        <span className="text-xs text-gray-600"> / day</span>
                       </div>
                       <Link
                         href={`/yachts/${yacht.id}`}
-                        className="bg-blue-600 hover:bg-blue-700 px-3 py-1.5 rounded-full text-xs font-semibold transition flex items-center gap-1"
+                        className="bg-teal-600 hover:bg-teal-700 px-3 py-1.5 rounded-full text-xs font-semibold transition flex items-center gap-1"
                       >
                         View <ArrowRight className="w-3 h-3" />
                       </Link>
@@ -191,16 +191,16 @@ export default function FavoritesPage() {
               <div className="grid grid-cols-2 gap-3">
                 <Link
                   href="/yachts"
-                  className="glass rounded-xl p-3 flex items-center gap-2 hover:bg-white/5 transition text-sm"
+                  className="glass rounded-xl p-3 flex items-center gap-2 hover:bg-gray-50 transition text-sm"
                 >
-                  <Search className="w-4 h-4 text-blue-400" />
+                  <Search className="w-4 h-4 text-teal-500" />
                   Find More Yachts
                 </Link>
                 <Link
                   href="/destinations"
-                  className="glass rounded-xl p-3 flex items-center gap-2 hover:bg-white/5 transition text-sm"
+                  className="glass rounded-xl p-3 flex items-center gap-2 hover:bg-gray-50 transition text-sm"
                 >
-                  <MapPin className="w-4 h-4 text-blue-400" />
+                  <MapPin className="w-4 h-4 text-teal-500" />
                   Destinations
                 </Link>
               </div>
@@ -211,17 +211,17 @@ export default function FavoritesPage() {
               <h3 className="font-bold mb-3">Saved Yachts Summary</h3>
               <div className="space-y-2">
                 <div className="flex justify-between text-sm">
-                  <span className="text-gray-400">Total saved</span>
+                  <span className="text-gray-600">Total saved</span>
                   <span>{favorites.length} yachts</span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-gray-400">Price range</span>
+                  <span className="text-gray-600">Price range</span>
                   <span>
                     &euro;{Math.min(...favorites.map(y => y.price)).toLocaleString()} - &euro;{Math.max(...favorites.map(y => y.price)).toLocaleString()}
                   </span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-gray-400">Avg. rating</span>
+                  <span className="text-gray-600">Avg. rating</span>
                   <span className="flex items-center gap-1">
                     <Star className="w-3 h-3 text-yellow-400 fill-yellow-400" />
                     {(favorites.reduce((sum, y) => sum + y.rating, 0) / favorites.length).toFixed(1)}
@@ -246,7 +246,7 @@ export default function FavoritesPage() {
             <Link
               key={item.label}
               href={item.href}
-              className={`flex flex-col items-center gap-0.5 py-1 px-4 ${item.active ? 'text-blue-400' : 'text-gray-500'}`}
+              className={`flex flex-col items-center gap-0.5 py-1 px-4 ${item.active ? 'text-teal-500' : 'text-gray-600'}`}
             >
               <item.icon className="w-5 h-5" />
               <span className="text-[10px]">{item.label}</span>

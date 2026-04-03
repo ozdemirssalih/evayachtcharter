@@ -155,22 +155,22 @@ Last updated: April 2026`,
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen bg-[#0c1222]">
+    <div className="min-h-screen bg-white">
       <Navbar />
 
       <div className="pt-16">
         {/* Hero */}
         <div className="relative h-48 md:h-64 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-blue-900/20 via-transparent to-[#0c1222]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-teal-900/20 via-transparent to-white" />
           <div className="relative z-10 h-full flex flex-col items-center justify-center px-4 text-center">
             <div className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full mb-4">
-              <Lock className="w-4 h-4 text-blue-400" />
-              <span className="text-xs text-gray-300">Legal</span>
+              <Lock className="w-4 h-4 text-teal-500" />
+              <span className="text-xs text-gray-600">Legal</span>
             </div>
             <h1 className="text-3xl md:text-5xl font-bold mb-3">
               Privacy <span className="gold-text">Policy</span>
             </h1>
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-600 text-sm">
               Last updated: April 2026
             </p>
           </div>
@@ -179,13 +179,13 @@ export default function PrivacyPage() {
         <div className="max-w-4xl mx-auto px-4 pb-16">
           {/* Quick Nav */}
           <div className="glass rounded-2xl p-5 mb-8">
-            <h3 className="text-sm font-bold mb-3 text-gray-400 uppercase tracking-wider">Contents</h3>
+            <h3 className="text-sm font-bold mb-3 text-gray-600 uppercase tracking-wider">Contents</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
               {sections.map(s => (
                 <a
                   key={s.id}
                   href={`#${s.id}`}
-                  className="flex items-center gap-2 text-sm text-gray-400 hover:text-blue-400 transition py-1"
+                  className="flex items-center gap-2 text-sm text-gray-600 hover:text-teal-500 transition py-1"
                 >
                   <s.icon className="w-3 h-3" />
                   {s.title}
@@ -199,12 +199,12 @@ export default function PrivacyPage() {
             {sections.map(s => (
               <section key={s.id} id={s.id} className="scroll-mt-24">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-blue-600/20 flex items-center justify-center">
-                    <s.icon className="w-5 h-5 text-blue-400" />
+                  <div className="w-10 h-10 rounded-xl bg-teal-600/20 flex items-center justify-center">
+                    <s.icon className="w-5 h-5 text-teal-500" />
                   </div>
-                  <h2 className="text-xl font-bold text-white">{s.title}</h2>
+                  <h2 className="text-xl font-bold text-gray-800">{s.title}</h2>
                 </div>
-                <div className="text-sm text-gray-400 leading-relaxed whitespace-pre-line ml-13">
+                <div className="text-sm text-gray-600 leading-relaxed whitespace-pre-line ml-13">
                   {s.content}
                 </div>
               </section>
@@ -213,21 +213,21 @@ export default function PrivacyPage() {
 
           {/* Contact */}
           <div className="glass rounded-2xl p-6 mt-12 flex flex-col sm:flex-row items-center gap-4">
-            <div className="w-12 h-12 rounded-full bg-blue-600/20 flex items-center justify-center flex-shrink-0">
-              <Mail className="w-6 h-6 text-blue-400" />
+            <div className="w-12 h-12 rounded-full bg-teal-600/20 flex items-center justify-center flex-shrink-0">
+              <Mail className="w-6 h-6 text-teal-500" />
             </div>
             <div className="flex-1 text-center sm:text-left">
               <h3 className="font-bold mb-1">Data Protection Officer</h3>
-              <p className="text-sm text-gray-400">
+              <p className="text-sm text-gray-600">
                 For privacy-related inquiries, contact us at{' '}
-                <a href="mailto:privacy@evayachtcharter.com" className="text-blue-400 hover:text-blue-300">
+                <a href="mailto:privacy@evayachtcharter.com" className="text-teal-500 hover:text-teal-400">
                   privacy@evayachtcharter.com
                 </a>
               </p>
             </div>
             <Link
               href="/contact"
-              className="bg-blue-600 hover:bg-blue-700 px-6 py-2.5 rounded-xl text-sm font-semibold transition whitespace-nowrap"
+              className="bg-teal-600 hover:bg-teal-700 px-6 py-2.5 rounded-xl text-sm font-semibold transition whitespace-nowrap"
             >
               Contact Us
             </Link>

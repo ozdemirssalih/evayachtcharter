@@ -98,7 +98,7 @@ const bookings = [
 const statusConfig: Record<string, { color: string; bg: string; icon: typeof CheckCircle; label: string }> = {
   confirmed: { color: 'text-green-400', bg: 'bg-green-600/20', icon: CheckCircle, label: 'Confirmed' },
   pending: { color: 'text-yellow-400', bg: 'bg-yellow-600/20', icon: AlertCircle, label: 'Pending' },
-  completed: { color: 'text-blue-400', bg: 'bg-blue-600/20', icon: CheckCircle, label: 'Completed' },
+  completed: { color: 'text-teal-500', bg: 'bg-teal-600/20', icon: CheckCircle, label: 'Completed' },
   cancelled: { color: 'text-red-400', bg: 'bg-red-600/20', icon: XCircle, label: 'Cancelled' },
 }
 
@@ -128,17 +128,17 @@ export default function BookingsPage() {
   const detail = bookings.find(b => b.id === selectedBooking)
 
   return (
-    <div className="min-h-screen bg-[#0c1222] pb-20 safe-top">
+    <div className="min-h-screen bg-white pb-20 safe-top">
       {/* Top Bar */}
       <div className="glass px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <Link href="/dashboard" className="text-gray-400 hover:text-white transition">
+          <Link href="/dashboard" className="text-gray-600 hover:text-gray-800 transition">
             <ChevronRight className="w-5 h-5 rotate-180" />
           </Link>
           <h1 className="font-bold text-lg">My Bookings</h1>
         </div>
         <div className="flex items-center gap-2">
-          <span className="glass px-2.5 py-1 rounded-full text-xs text-blue-300">
+          <span className="glass px-2.5 py-1 rounded-full text-xs text-teal-400">
             {bookings.filter(b => b.status === 'confirmed' || b.status === 'pending').length} upcoming
           </span>
         </div>
@@ -158,12 +158,12 @@ export default function BookingsPage() {
               onClick={() => setFilter(tab.id as typeof filter)}
               className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium whitespace-nowrap transition ${
                 filter === tab.id
-                  ? 'bg-blue-600 text-white'
-                  : 'glass text-gray-400 hover:text-white'
+                  ? 'bg-teal-600 text-gray-800'
+                  : 'glass text-gray-600 hover:text-gray-800'
               }`}
             >
               {tab.label}
-              <span className={`text-[10px] ${filter === tab.id ? 'bg-white/20' : 'bg-white/10'} px-1.5 py-0.5 rounded-full`}>
+              <span className={`text-[10px] ${filter === tab.id ? 'bg-white/20' : 'bg-teal-50'} px-1.5 py-0.5 rounded-full`}>
                 {tab.count}
               </span>
             </button>
@@ -177,8 +177,8 @@ export default function BookingsPage() {
           <div className="text-center py-16">
             <Calendar className="w-16 h-16 text-gray-700 mx-auto mb-4" />
             <h3 className="text-lg font-bold mb-2">No bookings found</h3>
-            <p className="text-sm text-gray-500 mb-6">Start planning your next adventure</p>
-            <Link href="/yachts" className="bg-blue-600 hover:bg-blue-700 px-6 py-2.5 rounded-full text-sm font-semibold transition">
+            <p className="text-sm text-gray-600 mb-6">Start planning your next adventure</p>
+            <Link href="/yachts" className="bg-teal-600 hover:bg-teal-700 px-6 py-2.5 rounded-full text-sm font-semibold transition">
               Browse Yachts
             </Link>
           </div>
@@ -191,7 +191,7 @@ export default function BookingsPage() {
             return (
               <div
                 key={booking.id}
-                className="glass rounded-2xl overflow-hidden hover:border-blue-500/30 transition cursor-pointer"
+                className="glass rounded-2xl overflow-hidden hover:border-teal-500/30 transition cursor-pointer"
                 onClick={() => setSelectedBooking(booking.id === selectedBooking ? null : booking.id)}
               >
                 <div className="flex">
@@ -204,15 +204,15 @@ export default function BookingsPage() {
                         {status.label}
                       </span>
                     </div>
-                    <p className="text-xs text-gray-500 mb-2">{booking.type} | {booking.id}</p>
-                    <div className="flex flex-wrap items-center gap-3 text-xs text-gray-400">
+                    <p className="text-xs text-gray-600 mb-2">{booking.type} | {booking.id}</p>
+                    <div className="flex flex-wrap items-center gap-3 text-xs text-gray-600">
                       <span className="flex items-center gap-1"><MapPin className="w-3 h-3" />{booking.destination}</span>
                       <span className="flex items-center gap-1"><Calendar className="w-3 h-3" />{booking.startDate}</span>
                       <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{duration} days</span>
                       <span className="flex items-center gap-1"><User className="w-3 h-3" />{booking.guests} guests</span>
                     </div>
                     <div className="flex items-center justify-between mt-2">
-                      <span className="font-bold text-blue-400">&euro;{booking.totalPrice.toLocaleString()}</span>
+                      <span className="font-bold text-teal-500">&euro;{booking.totalPrice.toLocaleString()}</span>
                       {booking.status === 'confirmed' && daysUntil > 0 && (
                         <span className="text-xs text-green-400">{daysUntil} days away</span>
                       )}
@@ -222,44 +222,44 @@ export default function BookingsPage() {
 
                 {/* Expanded Details */}
                 {selectedBooking === booking.id && (
-                  <div className="border-t border-white/10 p-4 space-y-4">
+                  <div className="border-t border-teal-200 p-4 space-y-4">
                     <div className="grid grid-cols-2 gap-4">
                       <div>
-                        <p className="text-xs text-gray-500 mb-1">Check-in</p>
+                        <p className="text-xs text-gray-600 mb-1">Check-in</p>
                         <p className="text-sm font-semibold">{booking.startDate}</p>
                       </div>
                       <div>
-                        <p className="text-xs text-gray-500 mb-1">Check-out</p>
+                        <p className="text-xs text-gray-600 mb-1">Check-out</p>
                         <p className="text-sm font-semibold">{booking.endDate}</p>
                       </div>
                       <div>
-                        <p className="text-xs text-gray-500 mb-1">Captain</p>
+                        <p className="text-xs text-gray-600 mb-1">Captain</p>
                         <p className="text-sm font-semibold">{booking.captain}</p>
                       </div>
                       <div>
-                        <p className="text-xs text-gray-500 mb-1">Extras</p>
+                        <p className="text-xs text-gray-600 mb-1">Extras</p>
                         <p className="text-sm font-semibold">{booking.extras.length > 0 ? booking.extras.join(', ') : 'None'}</p>
                       </div>
                     </div>
                     <div className="flex flex-wrap gap-2">
                       <Link
                         href={`/yachts/${bookings.indexOf(booking) + 1}`}
-                        className="flex items-center gap-1 glass px-3 py-2 rounded-xl text-xs hover:bg-white/10 transition"
+                        className="flex items-center gap-1 glass px-3 py-2 rounded-xl text-xs hover:bg-teal-50 transition"
                         onClick={e => e.stopPropagation()}
                       >
-                        <Eye className="w-3 h-3 text-blue-400" /> View Yacht
+                        <Eye className="w-3 h-3 text-teal-500" /> View Yacht
                       </Link>
                       <button
-                        className="flex items-center gap-1 glass px-3 py-2 rounded-xl text-xs hover:bg-white/10 transition"
+                        className="flex items-center gap-1 glass px-3 py-2 rounded-xl text-xs hover:bg-teal-50 transition"
                         onClick={e => e.stopPropagation()}
                       >
-                        <Download className="w-3 h-3 text-blue-400" /> Invoice
+                        <Download className="w-3 h-3 text-teal-500" /> Invoice
                       </button>
                       <button
-                        className="flex items-center gap-1 glass px-3 py-2 rounded-xl text-xs hover:bg-white/10 transition"
+                        className="flex items-center gap-1 glass px-3 py-2 rounded-xl text-xs hover:bg-teal-50 transition"
                         onClick={e => e.stopPropagation()}
                       >
-                        <Phone className="w-3 h-3 text-blue-400" /> Contact Crew
+                        <Phone className="w-3 h-3 text-teal-500" /> Contact Crew
                       </button>
                       {(booking.status === 'confirmed' || booking.status === 'pending') && (
                         <button
@@ -299,7 +299,7 @@ export default function BookingsPage() {
             <Link
               key={item.label}
               href={item.href}
-              className={`flex flex-col items-center gap-0.5 py-1 px-4 ${item.active ? 'text-blue-400' : 'text-gray-500'}`}
+              className={`flex flex-col items-center gap-0.5 py-1 px-4 ${item.active ? 'text-teal-500' : 'text-gray-600'}`}
             >
               <item.icon className="w-5 h-5" />
               <span className="text-[10px]">{item.label}</span>

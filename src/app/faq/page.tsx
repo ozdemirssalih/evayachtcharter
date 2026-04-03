@@ -135,20 +135,20 @@ const faqCategories: { title: string; icon: typeof Ship; items: FAQItem[] }[] = 
 
 function AccordionItem({ item, isOpen, onToggle }: { item: FAQItem; isOpen: boolean; onToggle: () => void }) {
   return (
-    <div className="glass rounded-xl overflow-hidden transition-all hover:border-blue-500/20">
+    <div className="glass rounded-xl overflow-hidden transition-all hover:border-teal-500/20">
       <button
         onClick={onToggle}
         className="w-full flex items-center gap-4 p-5 text-left transition"
       >
-        <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors ${isOpen ? 'bg-blue-600/30' : 'bg-white/5'}`}>
-          <item.icon className={`w-5 h-5 transition-colors ${isOpen ? 'text-blue-400' : 'text-gray-500'}`} />
+        <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors ${isOpen ? 'bg-teal-600/30' : 'bg-gray-50'}`}>
+          <item.icon className={`w-5 h-5 transition-colors ${isOpen ? 'text-teal-500' : 'text-gray-600'}`} />
         </div>
-        <span className={`flex-1 font-semibold text-sm transition-colors ${isOpen ? 'text-white' : 'text-gray-300'}`}>
+        <span className={`flex-1 font-semibold text-sm transition-colors ${isOpen ? 'text-gray-800' : 'text-gray-600'}`}>
           {item.question}
         </span>
         <ChevronDown
-          className={`w-5 h-5 text-gray-500 transition-transform duration-300 flex-shrink-0 ${
-            isOpen ? 'rotate-180 text-blue-400' : ''
+          className={`w-5 h-5 text-gray-600 transition-transform duration-300 flex-shrink-0 ${
+            isOpen ? 'rotate-180 text-teal-500' : ''
           }`}
         />
       </button>
@@ -158,7 +158,7 @@ function AccordionItem({ item, isOpen, onToggle }: { item: FAQItem; isOpen: bool
         }`}
       >
         <div className="px-5 pb-5 pl-19">
-          <p className="text-sm text-gray-400 leading-relaxed ml-14">{item.answer}</p>
+          <p className="text-sm text-gray-600 leading-relaxed ml-14">{item.answer}</p>
         </div>
       </div>
     </div>
@@ -174,22 +174,22 @@ export default function FAQPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0c1222]">
+    <div className="min-h-screen bg-white">
       <Navbar />
 
       <div className="pt-16">
         {/* Hero */}
         <div className="relative h-56 md:h-72 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-blue-900/20 via-transparent to-[#0c1222]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-teal-900/20 via-transparent to-white" />
           <div className="relative z-10 h-full flex flex-col items-center justify-center px-4 text-center">
             <div className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full mb-4">
-              <HelpCircle className="w-4 h-4 text-blue-400" />
-              <span className="text-xs text-gray-300">Help Center</span>
+              <HelpCircle className="w-4 h-4 text-teal-500" />
+              <span className="text-xs text-gray-600">Help Center</span>
             </div>
             <h1 className="text-3xl md:text-5xl font-bold mb-3">
               Frequently Asked <span className="gold-text">Questions</span>
             </h1>
-            <p className="text-gray-400 text-sm max-w-lg">
+            <p className="text-gray-600 text-sm max-w-lg">
               Everything you need to know about chartering a luxury yacht with Eva Yacht Charter
             </p>
           </div>
@@ -204,8 +204,8 @@ export default function FAQPage() {
                 onClick={() => setActiveCategory(cat.title)}
                 className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-xs font-medium whitespace-nowrap transition ${
                   activeCategory === cat.title
-                    ? 'bg-blue-600 text-white'
-                    : 'glass text-gray-400 hover:text-white hover:bg-white/10'
+                    ? 'bg-teal-600 text-gray-800'
+                    : 'glass text-gray-600 hover:text-gray-800 hover:bg-teal-50'
                 }`}
               >
                 <cat.icon className="w-3.5 h-3.5" />
@@ -234,22 +234,22 @@ export default function FAQPage() {
             ))}
 
           {/* Still Have Questions */}
-          <div className="glass rounded-3xl p-8 md:p-10 text-center mt-12 bg-gradient-to-r from-blue-600/10 to-purple-600/10">
-            <HelpCircle className="w-12 h-12 text-blue-400 mx-auto mb-4" />
+          <div className="glass rounded-3xl p-8 md:p-10 text-center mt-12 bg-gradient-to-r from-teal-600/10 to-purple-600/10">
+            <HelpCircle className="w-12 h-12 text-teal-500 mx-auto mb-4" />
             <h2 className="text-2xl font-bold mb-2">Still Have Questions?</h2>
-            <p className="text-gray-400 text-sm mb-6 max-w-md mx-auto">
+            <p className="text-gray-600 text-sm mb-6 max-w-md mx-auto">
               Our charter specialists are ready to help you with any questions about your upcoming voyage.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
                 href="/contact"
-                className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-xl font-semibold text-sm transition flex items-center justify-center gap-2"
+                className="bg-teal-600 hover:bg-teal-700 px-6 py-3 rounded-xl font-semibold text-sm transition flex items-center justify-center gap-2"
               >
                 <MessageCircle className="w-4 h-4" /> Contact Us
               </Link>
               <a
                 href="tel:+905321234567"
-                className="glass px-6 py-3 rounded-xl font-semibold text-sm hover:bg-white/10 transition flex items-center justify-center gap-2"
+                className="glass px-6 py-3 rounded-xl font-semibold text-sm hover:bg-teal-50 transition flex items-center justify-center gap-2"
               >
                 <Phone className="w-4 h-4" /> Call Now
               </a>

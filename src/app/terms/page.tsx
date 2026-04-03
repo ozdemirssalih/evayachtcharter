@@ -97,22 +97,22 @@ Last updated: April 2026`,
 
 export default function TermsPage() {
   return (
-    <div className="min-h-screen bg-[#0c1222]">
+    <div className="min-h-screen bg-white">
       <Navbar />
 
       <div className="pt-16">
         {/* Hero */}
         <div className="relative h-48 md:h-64 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-blue-900/20 via-transparent to-[#0c1222]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-teal-900/20 via-transparent to-white" />
           <div className="relative z-10 h-full flex flex-col items-center justify-center px-4 text-center">
             <div className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full mb-4">
-              <FileText className="w-4 h-4 text-blue-400" />
-              <span className="text-xs text-gray-300">Legal</span>
+              <FileText className="w-4 h-4 text-teal-500" />
+              <span className="text-xs text-gray-600">Legal</span>
             </div>
             <h1 className="text-3xl md:text-5xl font-bold mb-3">
               Terms & <span className="gold-text">Conditions</span>
             </h1>
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-600 text-sm">
               Last updated: April 2026
             </p>
           </div>
@@ -121,13 +121,13 @@ export default function TermsPage() {
         <div className="max-w-4xl mx-auto px-4 pb-16">
           {/* Quick Nav */}
           <div className="glass rounded-2xl p-5 mb-8">
-            <h3 className="text-sm font-bold mb-3 text-gray-400 uppercase tracking-wider">Contents</h3>
+            <h3 className="text-sm font-bold mb-3 text-gray-600 uppercase tracking-wider">Contents</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
               {sections.map(s => (
                 <a
                   key={s.id}
                   href={`#${s.id}`}
-                  className="flex items-center gap-2 text-sm text-gray-400 hover:text-blue-400 transition py-1"
+                  className="flex items-center gap-2 text-sm text-gray-600 hover:text-teal-500 transition py-1"
                 >
                   <ChevronRight className="w-3 h-3" />
                   {s.title}
@@ -140,8 +140,8 @@ export default function TermsPage() {
           <div className="space-y-8">
             {sections.map(s => (
               <section key={s.id} id={s.id} className="scroll-mt-24">
-                <h2 className="text-xl font-bold mb-4 text-white">{s.title}</h2>
-                <div className="text-sm text-gray-400 leading-relaxed whitespace-pre-line">
+                <h2 className="text-xl font-bold mb-4 text-gray-800">{s.title}</h2>
+                <div className="text-sm text-gray-600 leading-relaxed whitespace-pre-line">
                   {s.content}
                 </div>
               </section>
@@ -150,12 +150,12 @@ export default function TermsPage() {
 
           {/* Contact for questions */}
           <div className="glass rounded-2xl p-6 mt-12 text-center">
-            <p className="text-sm text-gray-400 mb-3">
+            <p className="text-sm text-gray-600 mb-3">
               Have questions about our terms? Contact our legal team.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 px-6 py-2.5 rounded-xl text-sm font-semibold transition"
+              className="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 px-6 py-2.5 rounded-xl text-sm font-semibold transition"
             >
               Contact Us <ChevronRight className="w-4 h-4" />
             </Link>

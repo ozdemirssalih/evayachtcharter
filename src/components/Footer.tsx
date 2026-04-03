@@ -57,33 +57,33 @@ export default function Footer() {
   }
 
   return (
-    <footer className="border-t border-white/10 bg-[#080e1a]">
+    <footer className="border-t border-teal-200 bg-[#080e1a]">
       {/* Newsletter Section */}
       <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="glass rounded-3xl p-8 md:p-10 mb-12 bg-gradient-to-r from-blue-600/10 to-purple-600/10 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/5 rounded-full blur-3xl" />
+        <div className="glass rounded-3xl p-8 md:p-10 mb-12 bg-gradient-to-r from-teal-600/10 to-purple-600/10 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-teal-600/5 rounded-full blur-3xl" />
           <div className="relative z-10 max-w-2xl mx-auto text-center">
             <h3 className="text-2xl md:text-3xl font-bold mb-2">
               Stay in the <span className="gold-text">Loop</span>
             </h3>
-            <p className="text-gray-400 text-sm mb-6">
+            <p className="text-gray-600 text-sm mb-6">
               Subscribe to receive exclusive deals, new yacht arrivals, and insider tips for your next charter.
             </p>
             <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-              <div className="flex-1 flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl px-4 py-3">
-                <Mail className="w-4 h-4 text-gray-500 flex-shrink-0" />
+              <div className="flex-1 flex items-center gap-2 bg-gray-50 border border-teal-200 rounded-xl px-4 py-3">
+                <Mail className="w-4 h-4 text-gray-600 flex-shrink-0" />
                 <input
                   type="email"
                   placeholder="Enter your email"
                   value={email}
                   onChange={e => setEmail(e.target.value)}
-                  className="bg-transparent text-sm w-full outline-none text-white placeholder-gray-500"
+                  className="bg-transparent text-sm w-full outline-none text-gray-800 placeholder-gray-500"
                   required
                 />
               </div>
               <button
                 type="submit"
-                className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition hover:shadow-lg hover:shadow-blue-600/25 whitespace-nowrap"
+                className="bg-teal-600 hover:bg-teal-700 px-6 py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition hover:shadow-lg hover:shadow-teal-600/25 whitespace-nowrap"
               >
                 <Send className="w-4 h-4" /> Subscribe
               </button>
@@ -102,10 +102,10 @@ export default function Footer() {
           {trustBadges.map(badge => (
             <div
               key={badge.label}
-              className="glass rounded-xl p-4 flex items-center gap-3 hover:border-blue-500/30 transition"
+              className="glass rounded-xl p-4 flex items-center gap-3 hover:border-teal-500/30 transition"
             >
-              <div className="w-10 h-10 rounded-full bg-blue-600/20 flex items-center justify-center flex-shrink-0">
-                <badge.icon className="w-5 h-5 text-blue-400" />
+              <div className="w-10 h-10 rounded-full bg-teal-600/20 flex items-center justify-center flex-shrink-0">
+                <badge.icon className="w-5 h-5 text-teal-500" />
               </div>
               <span className="text-sm font-semibold">{badge.label}</span>
             </div>
@@ -117,21 +117,21 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <Anchor className="w-7 h-7 text-blue-400" />
+              <Anchor className="w-7 h-7 text-teal-500" />
               <span className="text-lg font-bold gold-text">Eva Yacht Charter</span>
             </Link>
-            <p className="text-sm text-gray-500 leading-relaxed mb-4 max-w-xs">
+            <p className="text-sm text-gray-600 leading-relaxed mb-4 max-w-xs">
               Turkey's premier luxury yacht charter company. Discover the beauty of the Turkish Riviera aboard our handpicked fleet.
             </p>
             <div className="space-y-2">
-              <a href="tel:+905321234567" className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition">
-                <Phone className="w-4 h-4 text-blue-400" /> +90 532 XXX XX XX
+              <a href="tel:+905321234567" className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-800 transition">
+                <Phone className="w-4 h-4 text-teal-500" /> +90 532 XXX XX XX
               </a>
-              <a href="mailto:info@evayachtcharter.com" className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition">
-                <Mail className="w-4 h-4 text-blue-400" /> info@evayachtcharter.com
+              <a href="mailto:info@evayachtcharter.com" className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-800 transition">
+                <Mail className="w-4 h-4 text-teal-500" /> info@evayachtcharter.com
               </a>
-              <div className="flex items-center gap-2 text-sm text-gray-400">
-                <MapPin className="w-4 h-4 text-blue-400 flex-shrink-0" /> Bodrum Marina, Mugla, Turkey
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <MapPin className="w-4 h-4 text-teal-500 flex-shrink-0" /> Bodrum Marina, Mugla, Turkey
               </div>
             </div>
           </div>
@@ -139,13 +139,13 @@ export default function Footer() {
           {/* Links */}
           {Object.entries(sitemapLinks).map(([category, links]) => (
             <div key={category}>
-              <h4 className="font-bold text-sm mb-4 text-white">{category}</h4>
+              <h4 className="font-bold text-sm mb-4 text-gray-800">{category}</h4>
               <ul className="space-y-2.5">
                 {links.map(link => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm text-gray-500 hover:text-white transition"
+                      className="text-sm text-gray-600 hover:text-gray-800 transition"
                     >
                       {link.label}
                     </Link>
@@ -157,17 +157,17 @@ export default function Footer() {
         </div>
 
         {/* Social + Payment */}
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="border-t border-teal-200 pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Social */}
           <div className="flex items-center gap-3">
             {socialLinks.map(social => (
               <a
                 key={social.label}
                 href={social.href}
-                className="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-blue-600/20 hover:border-blue-500/30 transition"
+                className="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-teal-600/20 hover:border-teal-500/30 transition"
                 aria-label={social.label}
               >
-                <social.icon className="w-4 h-4 text-gray-400 hover:text-white" />
+                <social.icon className="w-4 h-4 text-gray-600 hover:text-gray-800" />
               </a>
             ))}
           </div>

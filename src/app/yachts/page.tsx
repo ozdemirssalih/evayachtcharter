@@ -83,21 +83,21 @@ export default function YachtsPage() {
   ].filter(Boolean).length
 
   return (
-    <div className="min-h-screen bg-[#0c1222]">
+    <div className="min-h-screen bg-white">
       {/* Header */}
       <header className="fixed top-0 w-full z-50 safe-top">
         <div className="glass px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Link href="/" className="flex items-center gap-2">
-              <Anchor className="w-6 h-6 text-blue-400" />
+              <Anchor className="w-6 h-6 text-teal-500" />
               <span className="text-lg font-bold gold-text">Eva Yacht</span>
             </Link>
           </div>
           <nav className="hidden md:flex items-center gap-6 text-sm">
-            <Link href="/yachts" className="text-white font-semibold">Yachts</Link>
-            <Link href="/destinations" className="text-gray-300 hover:text-white transition">Destinations</Link>
-            <Link href="/about" className="text-gray-300 hover:text-white transition">About</Link>
-            <Link href="/dashboard" className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-full text-white text-sm font-semibold transition">Dashboard</Link>
+            <Link href="/yachts" className="text-gray-800 font-semibold">Yachts</Link>
+            <Link href="/destinations" className="text-gray-600 hover:text-gray-800 transition">Destinations</Link>
+            <Link href="/about" className="text-gray-600 hover:text-gray-800 transition">About</Link>
+            <Link href="/dashboard" className="bg-teal-600 hover:bg-teal-700 px-4 py-2 rounded-full text-gray-800 text-sm font-semibold transition">Dashboard</Link>
           </nav>
         </div>
       </header>
@@ -106,12 +106,12 @@ export default function YachtsPage() {
         {/* Hero Banner */}
         <div className="relative h-48 md:h-64 overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=1920&q=80')] bg-cover bg-center opacity-20" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0c1222]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white" />
           <div className="relative z-10 h-full flex flex-col items-center justify-center px-4 text-center">
             <h1 className="text-3xl md:text-4xl font-bold mb-2">
               Our <span className="gold-text">Fleet</span>
             </h1>
-            <p className="text-gray-400 text-sm md:text-base max-w-lg">
+            <p className="text-gray-600 text-sm md:text-base max-w-lg">
               Explore {allYachts.length} luxury yachts across the Turkish Riviera
             </p>
           </div>
@@ -121,28 +121,28 @@ export default function YachtsPage() {
           {/* Search & Filter Bar */}
           <div className="glass rounded-2xl p-4 -mt-8 relative z-20 mb-6">
             <div className="flex flex-col md:flex-row gap-3">
-              <div className="flex-1 flex items-center gap-2 bg-white/5 rounded-xl px-3 py-3">
-                <Search className="w-5 h-5 text-blue-400 flex-shrink-0" />
+              <div className="flex-1 flex items-center gap-2 bg-gray-50 rounded-xl px-3 py-3">
+                <Search className="w-5 h-5 text-teal-500 flex-shrink-0" />
                 <input
                   type="text"
                   placeholder="Search yachts by name..."
                   value={searchQuery}
                   onChange={e => setSearchQuery(e.target.value)}
-                  className="bg-transparent text-sm w-full outline-none text-white placeholder-gray-500"
+                  className="bg-transparent text-sm w-full outline-none text-gray-800 placeholder-gray-500"
                 />
                 {searchQuery && (
-                  <button onClick={() => setSearchQuery('')}><X className="w-4 h-4 text-gray-500" /></button>
+                  <button onClick={() => setSearchQuery('')}><X className="w-4 h-4 text-gray-600" /></button>
                 )}
               </div>
               <div className="flex gap-2">
                 <button
                   onClick={() => setShowFilters(!showFilters)}
-                  className="flex items-center gap-2 glass px-4 py-3 rounded-xl text-sm hover:bg-white/10 transition"
+                  className="flex items-center gap-2 glass px-4 py-3 rounded-xl text-sm hover:bg-teal-50 transition"
                 >
-                  <SlidersHorizontal className="w-4 h-4 text-blue-400" />
+                  <SlidersHorizontal className="w-4 h-4 text-teal-500" />
                   <span>Filters</span>
                   {activeFilterCount > 0 && (
-                    <span className="bg-blue-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+                    <span className="bg-teal-600 text-gray-800 text-xs w-5 h-5 rounded-full flex items-center justify-center">
                       {activeFilterCount}
                     </span>
                   )}
@@ -150,13 +150,13 @@ export default function YachtsPage() {
                 <div className="hidden md:flex items-center gap-1 glass rounded-xl px-1">
                   <button
                     onClick={() => setViewMode('grid')}
-                    className={`p-2 rounded-lg transition ${viewMode === 'grid' ? 'bg-blue-600/20 text-blue-400' : 'text-gray-500 hover:text-gray-300'}`}
+                    className={`p-2 rounded-lg transition ${viewMode === 'grid' ? 'bg-teal-600/20 text-teal-500' : 'text-gray-600 hover:text-gray-600'}`}
                   >
                     <Grid3X3 className="w-4 h-4" />
                   </button>
                   <button
                     onClick={() => setViewMode('list')}
-                    className={`p-2 rounded-lg transition ${viewMode === 'list' ? 'bg-blue-600/20 text-blue-400' : 'text-gray-500 hover:text-gray-300'}`}
+                    className={`p-2 rounded-lg transition ${viewMode === 'list' ? 'bg-teal-600/20 text-teal-500' : 'text-gray-600 hover:text-gray-600'}`}
                   >
                     <List className="w-4 h-4" />
                   </button>
@@ -166,56 +166,56 @@ export default function YachtsPage() {
 
             {/* Filter Panel */}
             {showFilters && (
-              <div className="mt-4 pt-4 border-t border-white/10">
+              <div className="mt-4 pt-4 border-t border-teal-200">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                   {/* Yacht Type */}
                   <div>
-                    <label className="text-xs text-gray-400 mb-2 block">Yacht Type</label>
+                    <label className="text-xs text-gray-600 mb-2 block">Yacht Type</label>
                     <div className="relative">
                       <select
                         value={selectedType}
                         onChange={e => setSelectedType(e.target.value)}
-                        className="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2.5 text-sm outline-none text-white appearance-none cursor-pointer"
+                        className="w-full bg-gray-50 border border-teal-200 rounded-xl px-3 py-2.5 text-sm outline-none text-gray-800 appearance-none cursor-pointer"
                       >
                         {yachtTypes.map(t => <option key={t} value={t} className="text-black">{t}</option>)}
                       </select>
-                      <ChevronDown className="w-4 h-4 text-gray-500 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                      <ChevronDown className="w-4 h-4 text-gray-600 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
                     </div>
                   </div>
 
                   {/* Destination */}
                   <div>
-                    <label className="text-xs text-gray-400 mb-2 block">Destination</label>
+                    <label className="text-xs text-gray-600 mb-2 block">Destination</label>
                     <div className="relative">
                       <select
                         value={selectedDestination}
                         onChange={e => setSelectedDestination(e.target.value)}
-                        className="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2.5 text-sm outline-none text-white appearance-none cursor-pointer"
+                        className="w-full bg-gray-50 border border-teal-200 rounded-xl px-3 py-2.5 text-sm outline-none text-gray-800 appearance-none cursor-pointer"
                       >
                         {destinations.map(d => <option key={d} value={d} className="text-black">{d}</option>)}
                       </select>
-                      <ChevronDown className="w-4 h-4 text-gray-500 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                      <ChevronDown className="w-4 h-4 text-gray-600 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
                     </div>
                   </div>
 
                   {/* Guests */}
                   <div>
-                    <label className="text-xs text-gray-400 mb-2 block">Guests</label>
+                    <label className="text-xs text-gray-600 mb-2 block">Guests</label>
                     <div className="relative">
                       <select
                         value={selectedGuests}
                         onChange={e => setSelectedGuests(e.target.value)}
-                        className="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2.5 text-sm outline-none text-white appearance-none cursor-pointer"
+                        className="w-full bg-gray-50 border border-teal-200 rounded-xl px-3 py-2.5 text-sm outline-none text-gray-800 appearance-none cursor-pointer"
                       >
                         {guestOptions.map(g => <option key={g} value={g} className="text-black">{g}</option>)}
                       </select>
-                      <ChevronDown className="w-4 h-4 text-gray-500 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                      <ChevronDown className="w-4 h-4 text-gray-600 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
                     </div>
                   </div>
 
                   {/* Price Range */}
                   <div>
-                    <label className="text-xs text-gray-400 mb-2 block">
+                    <label className="text-xs text-gray-600 mb-2 block">
                       Price Range: {priceRange[0].toLocaleString()} - {priceRange[1].toLocaleString()} EUR/day
                     </label>
                     <div className="flex items-center gap-2">
@@ -226,7 +226,7 @@ export default function YachtsPage() {
                         step={500}
                         value={priceRange[0]}
                         onChange={e => setPriceRange([Math.min(Number(e.target.value), priceRange[1] - 500), priceRange[1]])}
-                        className="w-full accent-blue-500"
+                        className="w-full accent-teal-500"
                       />
                       <input
                         type="range"
@@ -235,7 +235,7 @@ export default function YachtsPage() {
                         step={500}
                         value={priceRange[1]}
                         onChange={e => setPriceRange([priceRange[0], Math.max(Number(e.target.value), priceRange[0] + 500)])}
-                        className="w-full accent-blue-500"
+                        className="w-full accent-teal-500"
                       />
                     </div>
                   </div>
@@ -248,13 +248,13 @@ export default function YachtsPage() {
                       setSelectedGuests('Any')
                       setPriceRange([0, 15000])
                     }}
-                    className="text-xs text-gray-500 hover:text-gray-300 transition"
+                    className="text-xs text-gray-600 hover:text-gray-600 transition"
                   >
                     Reset all filters
                   </button>
                   <button
                     onClick={() => setShowFilters(false)}
-                    className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-xl text-xs font-semibold transition"
+                    className="bg-teal-600 hover:bg-teal-700 px-4 py-2 rounded-xl text-xs font-semibold transition"
                   >
                     Apply Filters
                   </button>
@@ -265,15 +265,15 @@ export default function YachtsPage() {
 
           {/* Sort & Results Count */}
           <div className="flex items-center justify-between mb-6">
-            <p className="text-sm text-gray-400">
-              <span className="text-white font-semibold">{filteredYachts.length}</span> yachts found
+            <p className="text-sm text-gray-600">
+              <span className="text-gray-800 font-semibold">{filteredYachts.length}</span> yachts found
             </p>
             <div className="flex items-center gap-2">
-              <ArrowUpDown className="w-4 h-4 text-gray-500" />
+              <ArrowUpDown className="w-4 h-4 text-gray-600" />
               <select
                 value={sortBy}
                 onChange={e => setSortBy(e.target.value)}
-                className="bg-transparent text-sm text-gray-300 outline-none cursor-pointer"
+                className="bg-transparent text-sm text-gray-600 outline-none cursor-pointer"
               >
                 {sortOptions.map(s => (
                   <option key={s.value} value={s.value} className="text-black">{s.label}</option>
@@ -293,8 +293,8 @@ export default function YachtsPage() {
                   onClick={() => setSelectedType(type)}
                   className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium whitespace-nowrap transition ${
                     selectedType === type
-                      ? 'bg-blue-600 text-white'
-                      : 'glass text-gray-400 hover:text-white hover:bg-white/10'
+                      ? 'bg-teal-600 text-gray-800'
+                      : 'glass text-gray-600 hover:text-gray-800 hover:bg-teal-50'
                   }`}
                 >
                   <Icon className="w-3.5 h-3.5" />
@@ -309,7 +309,7 @@ export default function YachtsPage() {
             <div className="text-center py-20">
               <Search className="w-16 h-16 text-gray-700 mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2">No yachts found</h3>
-              <p className="text-gray-500 text-sm mb-6">Try adjusting your filters or search query</p>
+              <p className="text-gray-600 text-sm mb-6">Try adjusting your filters or search query</p>
               <button
                 onClick={() => {
                   setSearchQuery('')
@@ -318,7 +318,7 @@ export default function YachtsPage() {
                   setSelectedGuests('Any')
                   setPriceRange([0, 15000])
                 }}
-                className="bg-blue-600 hover:bg-blue-700 px-6 py-2.5 rounded-full text-sm font-semibold transition"
+                className="bg-teal-600 hover:bg-teal-700 px-6 py-2.5 rounded-full text-sm font-semibold transition"
               >
                 Clear All Filters
               </button>
@@ -327,7 +327,7 @@ export default function YachtsPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredYachts.map(yacht => (
                 <Link key={yacht.id} href={`/yachts/${yacht.id}`} className="block group">
-                  <div className="glass rounded-2xl overflow-hidden hover:border-blue-500/30 transition-all">
+                  <div className="glass rounded-2xl overflow-hidden hover:border-teal-500/30 transition-all">
                     <div className="relative h-48 md:h-56 overflow-hidden">
                       <img
                         src={yacht.image}
@@ -355,25 +355,25 @@ export default function YachtsPage() {
                     <div className="p-4">
                       <div className="flex items-center justify-between mb-2">
                         <h3 className="font-bold text-lg">{yacht.name}</h3>
-                        <span className="text-xs glass px-2 py-1 rounded-full text-blue-300">{yacht.type}</span>
+                        <span className="text-xs glass px-2 py-1 rounded-full text-teal-400">{yacht.type}</span>
                       </div>
-                      <div className="flex items-center gap-1 text-xs text-gray-500 mb-3">
+                      <div className="flex items-center gap-1 text-xs text-gray-600 mb-3">
                         <MapPin className="w-3 h-3" />
                         <span>{yacht.destination}</span>
                         <span className="mx-1">|</span>
                         <span>{yacht.reviews} reviews</span>
                       </div>
-                      <div className="flex items-center gap-4 text-xs text-gray-400 mb-3">
+                      <div className="flex items-center gap-4 text-xs text-gray-600 mb-3">
                         <span className="flex items-center gap-1"><Navigation className="w-3 h-3" />{yacht.length}</span>
                         <span className="flex items-center gap-1"><Users className="w-3 h-3" />{yacht.guests} guests</span>
                         <span className="flex items-center gap-1"><Wind className="w-3 h-3" />{yacht.cabins} cabins</span>
                       </div>
                       <div className="flex items-center justify-between">
                         <div>
-                          <span className="text-xl font-bold text-blue-400">&euro;{yacht.price.toLocaleString()}</span>
-                          <span className="text-xs text-gray-500"> / day</span>
+                          <span className="text-xl font-bold text-teal-500">&euro;{yacht.price.toLocaleString()}</span>
+                          <span className="text-xs text-gray-600"> / day</span>
                         </div>
-                        <span className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-full text-xs font-semibold transition">
+                        <span className="bg-teal-600 hover:bg-teal-700 px-4 py-2 rounded-full text-xs font-semibold transition">
                           View Details
                         </span>
                       </div>
@@ -386,7 +386,7 @@ export default function YachtsPage() {
             <div className="space-y-4">
               {filteredYachts.map(yacht => (
                 <Link key={yacht.id} href={`/yachts/${yacht.id}`} className="block group">
-                  <div className="glass rounded-2xl overflow-hidden hover:border-blue-500/30 transition-all flex flex-col md:flex-row">
+                  <div className="glass rounded-2xl overflow-hidden hover:border-teal-500/30 transition-all flex flex-col md:flex-row">
                     <div className="relative w-full md:w-72 h-48 md:h-auto flex-shrink-0 overflow-hidden">
                       <img
                         src={yacht.image}
@@ -414,27 +414,27 @@ export default function YachtsPage() {
                           <div className="flex items-center gap-1">
                             <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
                             <span className="text-sm font-semibold">{yacht.rating}</span>
-                            <span className="text-xs text-gray-500">({yacht.reviews})</span>
+                            <span className="text-xs text-gray-600">({yacht.reviews})</span>
                           </div>
                         </div>
-                        <div className="flex items-center gap-2 text-sm text-gray-500 mb-3">
-                          <span className="glass px-2 py-0.5 rounded-full text-xs text-blue-300">{yacht.type}</span>
+                        <div className="flex items-center gap-2 text-sm text-gray-600 mb-3">
+                          <span className="glass px-2 py-0.5 rounded-full text-xs text-teal-400">{yacht.type}</span>
                           <span className="flex items-center gap-1"><MapPin className="w-3 h-3" />{yacht.destination}</span>
                           <span>Built {yacht.year}</span>
                         </div>
-                        <div className="flex items-center gap-6 text-sm text-gray-400">
-                          <span className="flex items-center gap-1.5"><Navigation className="w-4 h-4 text-blue-400" />{yacht.length}</span>
-                          <span className="flex items-center gap-1.5"><Users className="w-4 h-4 text-blue-400" />{yacht.guests} guests</span>
-                          <span className="flex items-center gap-1.5"><Wind className="w-4 h-4 text-blue-400" />{yacht.cabins} cabins</span>
-                          <span className="flex items-center gap-1.5"><Users className="w-4 h-4 text-blue-400" />{yacht.crew} crew</span>
+                        <div className="flex items-center gap-6 text-sm text-gray-600">
+                          <span className="flex items-center gap-1.5"><Navigation className="w-4 h-4 text-teal-500" />{yacht.length}</span>
+                          <span className="flex items-center gap-1.5"><Users className="w-4 h-4 text-teal-500" />{yacht.guests} guests</span>
+                          <span className="flex items-center gap-1.5"><Wind className="w-4 h-4 text-teal-500" />{yacht.cabins} cabins</span>
+                          <span className="flex items-center gap-1.5"><Users className="w-4 h-4 text-teal-500" />{yacht.crew} crew</span>
                         </div>
                       </div>
-                      <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/10">
+                      <div className="flex items-center justify-between mt-4 pt-4 border-t border-teal-200">
                         <div>
-                          <span className="text-2xl font-bold text-blue-400">&euro;{yacht.price.toLocaleString()}</span>
-                          <span className="text-sm text-gray-500"> / day</span>
+                          <span className="text-2xl font-bold text-teal-500">&euro;{yacht.price.toLocaleString()}</span>
+                          <span className="text-sm text-gray-600"> / day</span>
                         </div>
-                        <span className="bg-blue-600 hover:bg-blue-700 px-6 py-2.5 rounded-full text-sm font-semibold transition">
+                        <span className="bg-teal-600 hover:bg-teal-700 px-6 py-2.5 rounded-full text-sm font-semibold transition">
                           View Details
                         </span>
                       </div>
@@ -448,13 +448,13 @@ export default function YachtsPage() {
       </div>
 
       {/* Footer */}
-      <footer className="border-t border-white/10 px-4 py-8 safe-bottom">
+      <footer className="border-t border-teal-200 px-4 py-8 safe-bottom">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <Anchor className="w-5 h-5 text-blue-400" />
+            <Anchor className="w-5 h-5 text-teal-500" />
             <span className="font-bold gold-text">Eva Yacht Charter</span>
           </div>
-          <p className="text-xs text-gray-500">2026 Eva Yacht Charter. All rights reserved.</p>
+          <p className="text-xs text-gray-600">2026 Eva Yacht Charter. All rights reserved.</p>
         </div>
       </footer>
     </div>

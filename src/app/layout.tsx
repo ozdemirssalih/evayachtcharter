@@ -20,7 +20,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
-  themeColor: '#0c1222',
+  themeColor: '#0ABAB5',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -30,7 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="apple-touch-icon" href="/icon-192.png" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
       </head>
-      <body className={`${inter.className} bg-[#0c1222] text-white antialiased min-h-screen`}>
+      <body className={`${inter.className} bg-white text-gray-800 antialiased min-h-screen`}>
         {children}
       </body>
     </html>

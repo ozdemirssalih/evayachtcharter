@@ -33,8 +33,8 @@ export default function Navbar() {
         }`}
       >
         <Link href="/" className="flex items-center gap-2 group">
-          <Anchor className="w-7 h-7 text-blue-400 group-hover:rotate-12 transition-transform duration-300" />
-          <span className="text-lg font-bold gold-text">Eva Yacht</span>
+          <Anchor className="w-7 h-7 text-teal-500 group-hover:rotate-12 transition-transform duration-300" />
+          <img src="/logo.svg" alt="Eva Yacht" className="h-8" />
         </Link>
 
         {/* Desktop Nav */}
@@ -43,7 +43,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-gray-300 hover:text-white transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-blue-400 after:transition-all hover:after:w-full"
+              className="text-gray-600 hover:text-gray-800 transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-500 after:transition-all hover:after:w-full"
             >
               {link.label}
             </Link>
@@ -52,17 +52,17 @@ export default function Navbar() {
           {isLoggedIn ? (
             <Link
               href="/dashboard"
-              className="flex items-center gap-2 glass px-3 py-2 rounded-full hover:bg-white/10 transition"
+              className="flex items-center gap-2 glass px-3 py-2 rounded-full hover:bg-teal-50 transition"
             >
-              <div className="w-7 h-7 rounded-full bg-blue-600 flex items-center justify-center text-xs font-bold">
+              <div className="w-7 h-7 rounded-full bg-teal-600 flex items-center justify-center text-xs font-bold">
                 E
               </div>
-              <ChevronDown className="w-3 h-3 text-gray-400" />
+              <ChevronDown className="w-3 h-3 text-gray-600" />
             </Link>
           ) : (
             <Link
               href="/login"
-              className="bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded-full text-white text-sm font-semibold transition hover:shadow-lg hover:shadow-blue-600/25"
+              className="bg-teal-600 hover:bg-teal-700 px-5 py-2 rounded-full text-gray-800 text-sm font-semibold transition hover:shadow-lg hover:shadow-teal-600/25"
             >
               Sign In
             </Link>
@@ -106,20 +106,20 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="block text-gray-300 hover:text-white hover:bg-white/5 px-4 py-3 rounded-xl transition"
+              className="block text-gray-600 hover:text-gray-800 hover:bg-gray-50 px-4 py-3 rounded-xl transition"
               onClick={() => setMenuOpen(false)}
             >
               {link.label}
             </Link>
           ))}
-          <div className="pt-2 border-t border-white/10">
+          <div className="pt-2 border-t border-teal-200">
             {isLoggedIn ? (
               <Link
                 href="/dashboard"
-                className="flex items-center gap-3 px-4 py-3 hover:bg-white/5 rounded-xl transition"
+                className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 rounded-xl transition"
                 onClick={() => setMenuOpen(false)}
               >
-                <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-xs font-bold">
+                <div className="w-8 h-8 rounded-full bg-teal-600 flex items-center justify-center text-xs font-bold">
                   E
                 </div>
                 <span>Dashboard</span>
@@ -127,7 +127,7 @@ export default function Navbar() {
             ) : (
               <Link
                 href="/login"
-                className="block bg-blue-600 text-center py-3 rounded-xl font-semibold hover:bg-blue-700 transition"
+                className="block bg-teal-600 text-center py-3 rounded-xl font-semibold hover:bg-teal-700 transition"
                 onClick={() => setMenuOpen(false)}
               >
                 Sign In
